@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+	<head>
+		<title>FurnaceTaken</title>
+		<meta charset="utf-8">
+		<link rel='shortcut icon' type='image' href='img/favicon.png'>
+	</head>
+	<style>
+		html,body
+		{
+			font-family:"Cronos Pro";
+			color:#FFFFFF;
+			text-shadow: 0 0 2px #000000, 0 0 2px #000000, 0 0 2px #000000;
+			margin:0;
+			height: 100%;
+		}
+		
+		@font-face
+		{
+			font-family:"Cronos Pro";
+			src:url('fonts/CronosPro.ttf');
+		}
+		
+		.row
+		{
+			background-position: center;
+			background-size: cover;
+			
+			display: flex;
+			flex-flow: column;
+			height: 33.33%;
+			
+			transition: all 0.5s ease;
+		}
+		.row:hover
+		{
+			transition: all 0.5s ease;
+		}
+		
+		.content
+		{
+			text-align: center;
+			font-size: 2em;
+		}
+		
+		.fractals{background-image:url("img/fractals/preview.png");}
+		
+		.raids{background-image:url("img/raids/preview.png");}
+		
+		.strikes{background-image:url("img/strikes/preview.png");}
+		
+		.Timer
+		{
+			background: rgba(0, 0, 0, 0.1);
+			margin-top: 30px;
+			width: 100%;
+			height: 120px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.Timer > div
+		{
+			position: relative;
+			width: 120px;
+			color: #fff;
+			font-size: 2em;
+			margin: 0 15px ;
+			margin-top: -25px;
+		}
+
+		.Timer > div:before
+		{
+			content: 'text';
+			position: absolute;
+			bottom: -30px;
+			left: 0;
+			width: 100%;
+			height: 35px;
+			color: #fff;
+			font-size: 0.5em;
+			line-height: 35px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+
+		.Timer > div#fday:before { content: 'Days'; }
+		.Timer > div#fhour:before { content: 'Hours'; }
+		.Timer > div#fminute:before { content: 'Minutes'; }
+		.Timer > div#fsecond:before { content: 'Seconds'; }
+		
+		.Timer > div#rday:before { content: 'Days'; }
+		.Timer > div#rhour:before { content: 'Hours'; }
+		.Timer > div#rminute:before { content: 'Minutes'; }
+		.Timer > div#rsecond:before { content: 'Seconds'; }
+		
+		.Timer > div#sday:before { content: 'Days'; }
+		.Timer > div#shour:before { content: 'Hours'; }
+		.Timer > div#sminute:before { content: 'Minutes'; }
+		.Timer > div#ssecond:before { content: 'Seconds'; }
+	</style>
+	<body>
+		<div class="row fractals">
+			<div class="content">
+				<h2>TIME SINCE SUNQUA PEAK RELEASED: </h2>
+				<div class="Timer">
+                    <div id="fday">-</div>
+                    <div id="fhour">-</div>
+                    <div id="fminute">-</div>
+                    <div id="fsecond">-</div>
+                </div>
+			</div>
+		</div>
+		<div class="row raids">
+			<div class="content">
+				<h2>TIME SINCE THE KEY OF AHDASHIM RELEASED: </h2>
+				<div class="Timer">
+                    <div id="rday">-</div>
+                    <div id="rhour">-</div>
+                    <div id="rminute">-</div>
+                    <div id="rsecond">-</div>
+                </div>
+			</div>
+		</div>
+		<div class="row strikes">
+			<div class="content">
+				<h2>TIME SINCE COLD WAR RELEASED: </h2>
+				<div class="Timer">
+                    <div id="sday">-</div>
+                    <div id="shour">-</div>
+                    <div id="sminute">-</div>
+                    <div id="ssecond">-</div>
+                </div>
+			</div>
+		</div>
+	</body>
+	<script>
+		// Set the date we're counting up to
+		var fractals = new Date("sep 15, 2020 18:00:00").getTime();
+		var raids = new Date("jun 11, 2019 18:00:00").getTime();
+		var strikes = new Date("may 26, 2020 18:00:00").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+
+		  // Get today's date and time
+		  var now = new Date().getTime();
+
+		  // Find the distance between now and the count down date
+		  var distance = now - fractals;
+
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		  // Create elements that display day,hours,minutes,seconds
+		  document.getElementById("fday").innerHTML = days;
+		  document.getElementById("fhour").innerHTML = hours;
+		  document.getElementById("fminute").innerHTML = minutes;
+		  document.getElementById("fsecond").innerHTML = seconds;
+		}, 1000);
+		
+		var y = setInterval(function() {
+
+		  // Get today's date and time
+		  var now = new Date().getTime();
+
+		  // Find the distance between now and the count down date
+		  var distance = now - raids;
+
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		  // Create elements that display day,hours,minutes,seconds
+		  document.getElementById("rday").innerHTML = days;
+		  document.getElementById("rhour").innerHTML = hours;
+		  document.getElementById("rminute").innerHTML = minutes;
+		  document.getElementById("rsecond").innerHTML = seconds;
+		}, 1000);
+		
+		var z = setInterval(function() {
+
+		  // Get today's date and time
+		  var now = new Date().getTime();
+
+		  // Find the distance between now and the count down date
+		  var distance = now - strikes;
+
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		  // Create elements that display day,hours,minutes,seconds
+		  document.getElementById("sday").innerHTML = days;
+		  document.getElementById("shour").innerHTML = hours;
+		  document.getElementById("sminute").innerHTML = minutes;
+		  document.getElementById("ssecond").innerHTML = seconds;
+		}, 1000);
+	</script>
+</html>
