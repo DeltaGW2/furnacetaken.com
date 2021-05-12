@@ -1,0 +1,234 @@
+<html><head>
+    <title>arcdps | deltaxconnected.com</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <style>
+      @media (prefers-color-scheme: light) {
+        .main {
+          background-color: white;
+          color: black;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-size: 14px;
+        }
+        a:link {
+          color: #3498db;
+        }
+        a:visited {
+          color: #8e44ad;
+        }
+        a:hover {
+          color: #3498db;
+        }
+        a:active {
+          color: #8e44ad;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        .main {
+          background-color: #222222;
+          color: #ddd;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+          font-size: 14px;
+        }
+        a:link {
+          color: #b3b3de;
+        }
+        a:visited {
+          color: #bca9c8;
+        }
+        a:hover {
+          color: #b3b3de;
+        }
+        a:active {
+          color: #bca9c8;
+        }
+      }
+    </style>
+  </head>
+  <body class="main">
+    <div>
+    <b>arcdps: gw2 dps meter (and general combat metrics tool)</b><br>
+    &nbsp;<span style="color:#c50c0c">WARNING: MODIFYING GUILD WARS 2 THROUGH ANY 3RD PARTY TOOLS IS NOT SUPPORTED BY ARENANET OR NCSOFT.<br>
+    &nbsp;THERE IS NO HELP OR WARRANTY. THIS IS ENTIRELY AT YOUR OWN RISK AND YOU ASSUME ALL RESPONSIBILITY<br> 
+    &nbsp;FOR USING THIS TOOL. IF YOU FEEL THIS PROVIDES GAMEPLAY ADVANTAGE OR AUTOMATION OR BREAKS ANY OTHER<br>
+    &nbsp;RULES DO NOT USE THIS.</span><br>
+    &nbsp;<span style="color:#a61616">IMPORTANT: DO NOT CONTACT ARENANET SUPPORT OR REQUEST HELP ON THE OFFICIAL FORUMS WHILE USING THIS<br>
+    &nbsp;MODIFICATION BY ANY MEANS OR UNDER ANY CIRCUMSTANCES EVER.</span><br><br>
+    <b>how does it work</b><br>
+    &nbsp;arcdps hooks client network data (among other helper functions), making it not user agreement friendly.<br>
+    &nbsp;however, in the feb 2017 ama, arenanet has granted 3rd party tools permission to collect and display combat stats via means previously not allowed.<br>
+    &nbsp;these are runtime modifications only, no changes are made to files on disk.<br><br>
+    <b>how do i install, update, or uninstall it</b><br>
+    &nbsp;save d3d9.dll into '<i>gw2 install dir/bin64/</i>' while the game is not running.<br>
+    &nbsp;config will be created in '<i>gw2 install dir/addons/arcdps/</i>'.<br>
+    &nbsp;to update, replace d3d9.dll.<br>
+    &nbsp;expect to have to update after major game changes, be surprised when it's not necessary.<br>
+    &nbsp;no official auto update but <a target="_blank" href="https://www.google.ca/search?q=arcdps+auto+update">solutions exist</a>.<br>
+    &nbsp;to reset, exit gw2 and remove the config folder above.<br>
+    &nbsp;to disable/remove, exit gw2 and rename/delete d3d9.dll.<br><br>
+    <b>how do i use it</b><br>
+    &nbsp;don't be a dick.<br>
+    &nbsp;by default, holding alt and shift is required for hotkeys.<br>
+    &nbsp;by default, t is the hotkey for options.<br>
+    &nbsp;left click on windows to interact.<br>
+    &nbsp;right click on windows to bring up their independent options (if available).<br><br>
+    <b>about accuracy</b><br>
+    &nbsp;while two sources of data are provided (area = server strike + simulated buff; personal = chat log), neither source should be considered 100%<br>
+    &nbsp;accurate. area stats will be missing damage from on-skill-activation triggers and some siphons, chat log stats will be missing some strikes from<br>
+    &nbsp;aoe (guardian gs2) and condition ticks vs shroud. damage in both will always include overkill (can't detect) and healing in chat log will never<br>
+    &nbsp;include overheal.<br><br>
+    <b>can i chain load another wrapper d3d9.dll</b><br>
+    &nbsp;arcdps will attempt to load d3d9_chainload.dll, and if found, redirect the direct3dcreate9 call to it instead of the system library.<br>
+    &nbsp;make sure you are using the 64bit version of wrappers (gemfx, sweetfx).<br>
+    &nbsp;you can try the loader found <a target="_blank" href="https://www.deltaconnected.com/arcdps/reshade_loader/">here</a> for overlay compatibility (unsupported).<br><br>
+    <b>evtc logging</b><br>
+    &nbsp;pve: starts on all players in combat when npc with recognized id exists nearby, stops when all players exit combat.<br>
+    &nbsp;wvw: starts on player vs player damage near self, stops when all players exit combat.<br>
+    &nbsp;open world: no.<br>
+    &nbsp;npc id can be found via detail window and looking for species in title, or tooltip in target list after attacking.<br>
+    &nbsp;logs are written to '<i>documents/gw2/addons/arcdps/arcdps.cbtlogs/.../date-time.evtc</i>' by default.<br>
+    &nbsp;compression requires powershell with compress-archive.<br><br>
+    <b>evtc parsing</b><br>
+    &nbsp;/u/Baaron4: <a target="_blank" href="https://github.com/baaron4/GW2-Elite-Insights-Parser/">GW2-Elite-Insights-Parser/</a><br>
+    &nbsp;Mickathia.8701: <a target="_blank" href="https://dps.report/">dps.report/</a><br>
+    &nbsp;/u/blahdot3h: <a target="_blank" href="https://github.com/CoffeeBns/GW2RaidarUploader/">GW2RaidarUploader/</a><br>
+    &nbsp;/u/platinummyr: <a target="_blank" href="https://github.com/jacob-keller/L0G-101086/">L0G-101086</a>, <a target="_blank" href="https://github.com/jacob-keller/L0G-101086/tree/master/simpleArcParse">simpleArcParse</a><br>
+    &nbsp;/u/sejsel: <a target="_blank" href="https://gw2scratch.com/tools/manager">Log Manager</a><br>
+    &nbsp;evtc code and readme: <a target="_blank" href="evtc/">https://www.deltaconnected.com/arcdps/evtc/</a><br><br>
+    <b>realtime api</b><br>
+    &nbsp;place extensions in <i>gw2 install dir/bin64/</i>.<br>
+    &nbsp;/u/e-scrape-artist: <a target="_blank" href="https://buildpad.gw2archive.eu/">https://buildpad.gw2archive.eu/</a><br>
+    &nbsp;/u/Artenuvielle: <a target="_blank" href="https://github.com/Artenuvielle/GW2-SCT/releases">https://github.com/Artenuvielle/GW2-SCT/releases</a><br>
+    &nbsp;knox#6597: <a target="_blank" href="https://github.com/knoxfighter/arcdps-killproof.me-plugin/releases">https://github.com/knoxfighter/arcdps-killproof.me-plugin/releases</a><br>
+    &nbsp;knox#6597: <a target="_blank" href="https://github.com/knoxfighter/GW2-ArcDPS-Boon-Table/releases">https://github.com/knoxfighter/GW2-ArcDPS-Boon-Table/releases</a><br>
+    &nbsp;knox#6597: <a target="_blank" href="https://github.com/knoxfighter/GW2-ArcDPS-Mechanics-Log/releases">https://github.com/knoxfighter/GW2-ArcDPS-Mechanics-Log/releases</a><br>
+    &nbsp;gegplo#1619: <a target="_blank" href="https://github.com/jiangyi0923/d3d9_arcdps_sytool/releases">https://github.com/jiangyi0923/d3d9_arcdps_sytool/releases</a><br>
+    &nbsp;gegplo#1619: <a target="_blank" href="https://github.com/jiangyi0923/GW2_arcdps_MountTool/releases">https://github.com/jiangyi0923/GW2_arcdps_MountTool/releases</a><br>
+    &nbsp;Kappa322#2725: <a target="_blank" href="https://github.com/Krappa322/arcdps_healing_stats/releases">https://github.com/Krappa322/arcdps_healing_stats/releases</a><br>
+    &nbsp;Sejsel#8491: <a target="_blank" href="https://gw2scratch.com/tools/arcdps-clears">https://gw2scratch.com/tools/arcdps-clears</a><br>
+    &nbsp;example code and readme: <a target="_blank" href="api/">https://www.deltaconnected.com/arcdps/api/</a><br><br>
+    <b>translations</b><br>
+    &nbsp;place translation in <i>gw2 install dir/addons/arcdps/</i>, named arcdps_lang.ini.<br>
+    &nbsp;/u/Snowy1794: <a target="_blank" href="https://github.com/Snowy1794/Arcdps-translation-Chinese-simplified/blob/master/arcdps_lang.ini">https://github.com/Snowy1794/Arcdps-translation-Chinese-simplified/blob/master/arcdps_lang.ini</a> (chinese simplified).<br>
+    &nbsp;/u/bluelovers: <a target="_blank" href="https://github.com/bluelovers/node-gw2plus/blob/master/dist/assets/arcdps/translations/cht/arcdps_lang.ini">https://github.com/bluelovers/node-gw2plus/blob/master/dist/assets/arcdps/translations/cht/arcdps_lang.ini</a> (chinese traditional).<br>
+    &nbsp;/u/ReActif: <a target="_blank" href="https://pastebin.com/zgTm94PJ">https://pastebin.com/zgTm94PJ</a> (french).<br>
+    &nbsp;Linus The One.7432: <a target="_blank" href="https://pastebin.com/TaPLR8FJ">https://pastebin.com/TaPLR8FJ</a> (german).<br>
+    &nbsp;creating a translation: <a target="_blank" href="https://www.deltaconnected.com/arcdps/translations/">https://www.deltaconnected.com/arcdps/translations/</a><br><br>
+    <b>limitations</b><br>
+    &nbsp;area is missing buff extension source (eg. signet of inspiration) - not notified by server.<br>
+    &nbsp;area is missing percent-based damage (eg. matthias' hadouken) - not notified by server.<br>
+    &nbsp;area is missing some siphon damage (eg. food, sigil, some traits) - not notified by server.<br>
+    &nbsp;area is missing healing - not notified by server.<br>
+    &nbsp;area is missing hard cc context - not notified by server.<br>
+    &nbsp;area is missing combo finishers - not notified by server.<br>
+    &nbsp;area is missing some gadget owners for damage association - not notified by server.<br>
+    &nbsp;area condition damage uses simulated attribute building from gear, traits, and buffs, on a simulated server tick.<br>
+    &nbsp;area condition damage scaling in levels 1 to 79 is different from the game's scaling.<br>
+    &nbsp;area condition damage on-skill-use procs on animation start instead of on skill use - not notified by server.<br>
+    &nbsp;area strike damage notify bubble may cause some events (eg. deimos) to be out of range - not notified by server.<br>
+    &nbsp;area strips ignore last-stack stability, cc and strip indistinguishable.<br>
+    &nbsp;area skill activation will only count skills which have animations (no shouts, no instants) - not notified by server.<br>
+    &nbsp;area overstack and applied do not include ignored stacks (lower than lowest existing stack) - not notified by server.<br><br>
+    <b>it's not working</b><br>
+    &nbsp;make sure <a target="_blank" href="https://support.microsoft.com/en-ca/help/2977003/the-latest-supported-visual-c-downloads">visual studio 2015-2019 redistributable x64</a> is installed.<br>
+    &nbsp;check your '<i>gw2 install dir/addons/arcdps/</i>' folder for an arcdps.log, it will appear after you launch and are in character select.<br>
+    &nbsp;if you use other applications or client switches, <i>d3d9.dll</i> may need to be placed next to gw2.exe. do not place it in both locations.<br>
+    &nbsp;if there is no log or error, <i>d3d9.dll</i> isn't being loaded. it is up to you to find out where your system is trying to load it from.<br>
+    &nbsp;if the game crashes on or after character select, another application may be interfering (eg d3dgear, razer cortex).<br>
+    &nbsp;if you get an image modified error, another application is interfering (eg antivirus, razer cortex).<br>
+    &nbsp;if you get a config error, or settings not saving, make sure gw2.exe has read/write permission to the paths mentioned (or run as admin).<br>
+    &nbsp;if you have a problem not listed here, see section below.<br><br>
+    <b>reporting crashes, bugs, and suggestions</b><br>
+    &nbsp;if you notice an issue in accuracy, <a target="_blank" href="https://i.imgur.com/77rgXNw.jpg">take a screenshot of area skill list beside personal chat list</a>, try and isolate which gear/buff/trait is the cause.<br>
+    &nbsp;if you suspect arcdps as the cause of a crash, remove all addons and remove any chainload and try to repeat the crash.<br>
+    &nbsp;copy the arcdps_lastcrash.log and/or the most recent arcdps.log and paste it into an unlisted <a target="_blank" href="http://pastebin.com/">http://pastebin.com/</a> paste.<br>
+    &nbsp;write down the arcdps build date, the "arcdps - date" text at the bottom of the options window or in arcdps.log.<br>
+    &nbsp;describe your issue with the above information included in the arcdps-issues channel on <a href="https://discord.gg/RaZ5myp">discord</a>.<br>
+    &nbsp;note that arcdps replaces the gw2 crash reporter to prevent crashes from being sent to anet, this does not mean arcdps caused a crash.<br><br>
+    <b>changes</b><br>
+    &nbsp;may.12.2021: added manual implementation for destructive impulses.<br>
+    &nbsp;may.12.2021: fixed a crash.<br>
+    &nbsp;may.11.2021: updated for may11 game build maybe.<br>
+    &nbsp;may.11.2021: added detection for damage-if-still.<br>
+    &nbsp;may.11.2021: added detection for siphon modifiers.<br>
+    &nbsp;may.11.2021: prevent writing logs if min duration not met.<br>
+    &nbsp;may.11.2021: buff table fixed bars... again.<br>
+    &nbsp;may.11.2021: added buff table option to show subgroup averages only.<br>
+    &nbsp;may.11.2021: clicking on buff table buff header tabs opens buff in squad graph.<br>
+    &nbsp;may.11.2021: better squad graph window response on changing buff or historical.<br>
+    &nbsp;may.11.2021: added target dps out/in to squad graphs graph list.<br>
+    &nbsp;may.11.2021: prevent squad graphs buff lines spiking over stack cap.<br>
+    &nbsp;may.11.2021: extensions: filled in missing keys for eg ctrl-v.<br>
+    &nbsp;may.11.2021: api/evtc: where is_moving applies, bit 0 is src, bit 1 is now dst.<br>
+    &nbsp;may.11.2021: api/evtc: added enum for buffdamage is_cycle, see readme.<br>
+    &nbsp;may.11.2021: evtc: cbts buffinfo, overstackvalue is now duration cap.<br>
+    &nbsp;may.11.2021: strings: at end.<br>
+    &nbsp;may.02.2021: details made cleave line darker to match.<br>
+    &nbsp;may.02.2021: details added colour (graph_splitter) in arc-lists for background lines.<br>
+    &nbsp;may.02.2021: added armistice to wvw map types for wvw logging.<br>
+    &nbsp;may.02.2021: fixed missing banner of discipline association.<br>
+    &nbsp;apr.30.2021: reduced unecessary event count in squad graph crunching.<br>
+    &nbsp;apr.30.2021: revert keybinds not unsetting binds that use same key.<br>
+    &nbsp;apr.30.2021: added better keybind category detection.<br>
+    &nbsp;apr.30.2021: fixed a crash in previous.<br>
+    &nbsp;apr.29.2021: buff table nominal options apply to subgroup average.<br>
+    &nbsp;apr.29.2021: prevent some unecessary area log resets (wvw), start only on sq damage event in combat.<br>
+    &nbsp;apr.29.2021: save squad historical in wvw as is in pve when wvw log conditions met.<br>
+    &nbsp;apr.29.2021: fixed missing "equal to" to wvw squad participant check (1 is now 1 instead of 2).<br>
+    &nbsp;apr.29.2021: moved max fight count to store in memory to options/logging.<br>
+    &nbsp;apr.29.2021: added option to purge historical when over target memory limit (default 1024MB).<br>
+    &nbsp;apr.29.2021: added option to ignore saving to historical when below minimum duration (default 10s).<br>
+    &nbsp;apr.29.2021: changed squad historical restore to respect "last damage for combat end" option.<br>
+    &nbsp;apr.29.2021: added expensively calculated but mostly functional squad graphs window (resizeable).<br>
+    &nbsp;apr.29.2021: changed details window to be resizeable, maybe fixed detail graph point spacing.<br>
+    &nbsp;apr.29.2021: replaced details graph point generation to match squad graphs.<br>
+    &nbsp;apr.29.2021: fixed possible area stats init when opening a new area stats first time after details.<br>
+    &nbsp;apr.29.2021: split details window skill graph to dmg bars if selected from dmg, buff uptime if buff.<br>
+    &nbsp;apr.29.2021: added lower transparency vs target line to details graph, plus option to disable.<br>
+    &nbsp;apr.29.2021: added details option to hide hidden buffs, enabled by default.<br>
+    &nbsp;apr.29.2021: changed details window to take defaults from main area stats window if opened from hotkey.<br>
+    &nbsp;apr.29.2021: moved some things from details window rt click menu to header buttons.<br>
+    &nbsp;apr.29.2021: detail and squad buff graphs use an active-seconds-at-second model, not applied duration.<br>
+    &nbsp;apr.29.2021: fixed persist reset on squad join/leave constantly resetting when not in squad.<br>
+    &nbsp;apr.29.2021: forward clicks to ui on wantkeyboard or wantchar (fix clicking not dropping focus).<br>
+    &nbsp;apr.29.2021: safer keybind template save on client exit, may prevent loading with a trashed profile.<br>
+    &nbsp;apr.29.2021: keybinds skip keybind if bound elsewhere instead of unbinding the other.<br>
+    &nbsp;apr.29.2021: api: added export e9 (void e9(cbtevent* ev, uint32_t sig)), thread-safe.<br>
+    &nbsp;apr.29.2021: api: added end-of-combat delayed cbts_apidelayed statechange.<br>
+    &nbsp;apr.29.2021: api: buffapply only when visible, source and target part of squad, otherwise in apidelayed.<br>
+    &nbsp;apr.29.2021: api: buffremove delayed as above except buffremove_all, which behaves as it did.<br>
+    &nbsp;apr.29.2021: evtc: added owner association for warrior banners.<br>
+    &nbsp;apr.29.2021: evtc: added addon-added event, cbts_extension and pad61-64 is extension sig.<br>
+    &nbsp;apr.29.2021: evtc: buffapply is_shields (buff applied active) set to 2 for stab-like buffs.<br>
+    &nbsp;apr.03.2021: fixed a crash that could happen whenever.<br>
+    &nbsp;mar.29.2021: fixed boon table subgroup skipping 0 total values on a subgroup.<br>
+    &nbsp;mar.29.2021: fixed boon table subgroup max bar calc.<br>
+    &nbsp;mar.29.2021: fixed boon table nominal limit not doing anything (im bad).<br>
+    &nbsp;mar.29.2021: fixed historical since logging fix.<br>
+    &nbsp;mar.29.2021: changed duration and duration sorted buffs to default to 9 stacks.<br>
+    &nbsp;mar.29.2021: added option to limit buff table in minimum to nominal.<br>
+    &nbsp;mar.29.2021: api: added cbts_statreset, to match ui stat reset like dhuum.<br>
+    &nbsp;mar.28.2021: renamed buff table tab option to show/hide the tab text, moved to display.<br>
+    &nbsp;mar.28.2021: better indicate tabs in buff table.<br>
+    &nbsp;mar.27.2021: added nicer ui to edit buff list to buff table.<br>
+    &nbsp;mar.27.2021: added option to name the two buff table tabs.<br>
+    &nbsp;mar.27.2021: added text buttons to buff table to quicker toggle between both tabs.<br>
+    &nbsp;mar.27.2021: clicking on current tab toggles between buffs out and in.<br>
+    &nbsp;mar.27.2021: added buff table option to limit buffs in bar drawing to 1target nominal.<br>
+    &nbsp;mar.27.2021: updated default buff lists.<br>
+    &nbsp;mar.27.2021: removed existing buff_table ini keys.<br>
+    &nbsp;mar.27.2021: fixed detail window indexing since previous.<br>
+    &nbsp;mar.27.2021: fixed buff window player max bar using squad max since previous.<br>
+    &nbsp;mar.27.2021: fixed player, agent, and guild name in evtc path since previous.<br>
+    &nbsp;mar.27.2021: fixed a heap corruption bug (ag0).<br>
+    &nbsp;mar.27.2021: fixed invalid handle access (ag0, may fix low resource/fps freeze).<br>
+    &nbsp;mar.27.2021: further reduced main thread load from arcdps.<br>
+    &nbsp;mar.27.2021: strings: bottom of common.<br>
+    &nbsp;mar.24.2021: fixed metrics drawing in some cases.<br>
+    &nbsp;mar.24.2021: fixed short freeze on writing evtc logs on some systems.<br><br>
+    <b>download</b><br>
+    &nbsp;<a href="x64/d3d9.dll">x64: current</a> <!--?php echo date ("(Ymd-His)", filemtime('x64/d3d9.dll')); ?--><br><br>
+    <img src="notepad.gif">
+    </div>
+  
+
+</body></html>
