@@ -49,6 +49,10 @@
 		
 		.strikes{background-image:url("img/strikes/preview.png");}
 		
+		.dungeons{background-image:url("img/dungeons/preview.png");}
+		
+		.drms{background-image:url("img/drms/preview.png");}
+		
 		.Timer
 		{
 			background: rgba(0, 0, 0, 0.1);
@@ -99,6 +103,16 @@
 		.Timer > div#shour:before { content: 'Hours'; }
 		.Timer > div#sminute:before { content: 'Minutes'; }
 		.Timer > div#ssecond:before { content: 'Seconds'; }
+		
+		.Timer > div#duday:before { content: 'Days'; }
+		.Timer > div#duhour:before { content: 'Hours'; }
+		.Timer > div#duminute:before { content: 'Minutes'; }
+		.Timer > div#dusecond:before { content: 'Seconds'; }
+		
+		.Timer > div#drday:before { content: 'Days'; }
+		.Timer > div#drhour:before { content: 'Hours'; }
+		.Timer > div#drminute:before { content: 'Minutes'; }
+		.Timer > div#drsecond:before { content: 'Seconds'; }
 	</style>
 	<body>
 		<div class="row fractals">
@@ -134,12 +148,36 @@
                 </div>
 			</div>
 		</div>
+		<div class="row dungeons">
+			<div class="content">
+				<h2>TIME SINCE AETHERBLADE RETREAT RELEASED: </h2>
+				<div class="Timer">
+                    <div id="duday">-</div>
+                    <div id="duhour">-</div>
+                    <div id="duminute">-</div>
+                    <div id="dusecond">-</div>
+                </div>
+			</div>
+		</div>
+		<div class="row drms">
+			<div class="content">
+				<h2>TIME SINCE CHAMPIONS CHAPTER 3 RELEASED: </h2>
+				<div class="Timer">
+                    <div id="drday">-</div>
+                    <div id="drhour">-</div>
+                    <div id="drminute">-</div>
+                    <div id="drsecond">-</div>
+                </div>
+			</div>
+		</div>
 	</body>
 	<script>
 		// Set the date we're counting up to
 		var fractals = new Date("sep 15, 2020 18:00:00").getTime();
 		var raids = new Date("jun 11, 2019 18:00:00").getTime();
 		var strikes = new Date("may 26, 2020 18:00:00").getTime();
+		var dungeons = new Date("jun 25, 2013 18:00:00").getTime();
+		var drms = new Date("mar 9, 2021 18:00:00").getTime();
 
 		// Update the count down every 1 second
 		var x = setInterval(function() {
@@ -203,6 +241,48 @@
 		  document.getElementById("shour").innerHTML = hours;
 		  document.getElementById("sminute").innerHTML = minutes;
 		  document.getElementById("ssecond").innerHTML = seconds;
+		}, 1000);
+		
+		var a = setInterval(function() {
+
+		  // Get today's date and time
+		  var now = new Date().getTime();
+
+		  // Find the distance between now and the count down date
+		  var distance = now - dungeons;
+
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		  // Create elements that display day,hours,minutes,seconds
+		  document.getElementById("duday").innerHTML = days;
+		  document.getElementById("duhour").innerHTML = hours;
+		  document.getElementById("duminute").innerHTML = minutes;
+		  document.getElementById("dusecond").innerHTML = seconds;
+		}, 1000);
+		
+		var b = setInterval(function() {
+
+		  // Get today's date and time
+		  var now = new Date().getTime();
+
+		  // Find the distance between now and the count down date
+		  var distance = now - drms;
+
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		  // Create elements that display day,hours,minutes,seconds
+		  document.getElementById("drday").innerHTML = days;
+		  document.getElementById("drhour").innerHTML = hours;
+		  document.getElementById("drminute").innerHTML = minutes;
+		  document.getElementById("drsecond").innerHTML = seconds;
 		}, 1000);
 	</script>
 </html>
