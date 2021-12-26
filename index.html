@@ -41,6 +41,7 @@
 		.dungeons{background-image:url("img/dungeons.png");}
 		.drms{background-image:url("img/drms.png");}
 		.balance{background-image:url("img/balance.png");}
+		.mysticbuilds{background-image:url("img/mysticbuilds.png");}
 		
 		.Timer {
 			background: rgba(0, 0, 0, 0.1);
@@ -97,6 +98,12 @@
 				<div class="Timer"></div>
 			</div>
 		</div>
+		<div class="row mysticbuilds">
+			<div class="content">
+				<h2>TIME SINCE LAST MYSTIC BUILDS: </h2>
+				<div class="Timer"></div>
+			</div>
+		</div>
 		<div class="row strikes">
 			<div class="content">
 				<h2>TIME SINCE COLD WAR RELEASED: </h2>
@@ -124,6 +131,7 @@
 		var strikes = new Date("may 26, 2020 18:00:00").getTime();
 		var dungeons = new Date("jun 25, 2013 18:00:00").getTime();
 		var drms = new Date("mar 9, 2021 18:00:00").getTime();
+		var mysticbuilds = new Date("dec 26, 2021 18:00:00").getTime();
 		
 		var timers = document.getElementsByClassName("Timer");
 		for (var i = 0; i < timers.length; i++) {
@@ -145,6 +153,9 @@
 					break;
 				case "drms":
 					startCD(timers[i], drms);
+					break;
+				case "mysticbuilds":
+					startCD(timers[i], mysticbuilds);
 					break;
 			}
 		}
