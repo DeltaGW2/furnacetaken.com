@@ -42,6 +42,8 @@
 		.drms{background-image:url("img/drms.png");}
 		.balance{background-image:url("img/balance.png");}
 		.mysticbuilds{background-image:url("img/mysticbuilds.png");}
+		.mota{background-image:url("img/mota.jpg");}
+		.erp{background-image:url("img/erp.png");}
 		
 		.Timer {
 			background: rgba(0, 0, 0, 0.1);
@@ -104,6 +106,18 @@
 				<div class="Timer"></div>
 			</div>
 		</div>
+		<div class="row mota">
+			<div class="content">
+				<h2>TIME SINCE LAST PVP TOURNAMENT: </h2>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row erp">
+			<div class="content">
+				<h2>TIME SINCE LAST RAID TOURNAMENT: </h2>
+				<div class="Timer"></div>
+			</div>
+		</div>
 		<div class="row strikes">
 			<div class="content">
 				<h2>TIME SINCE COLD WAR RELEASED: </h2>
@@ -132,6 +146,8 @@
 		var dungeons = new Date("jun 25, 2013 18:00:00").getTime();
 		var drms = new Date("mar 9, 2021 18:00:00").getTime();
 		var mysticbuilds = new Date("dec 26, 2021 18:00:00").getTime();
+		var mota = new Date("oct 17, 2021 18:00:00").getTime();
+		var erp = new Date("jul 18, 2021 18:00:00").getTime();
 		
 		var timers = document.getElementsByClassName("Timer");
 		for (var i = 0; i < timers.length; i++) {
@@ -156,6 +172,12 @@
 					break;
 				case "mysticbuilds":
 					startCD(timers[i], mysticbuilds);
+					break;
+				case "mota":
+					startCD(timers[i], mota);
+					break;
+				case "erp":
+					startCD(timers[i], erp);
 					break;
 			}
 		}
