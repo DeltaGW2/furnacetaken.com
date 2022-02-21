@@ -44,7 +44,8 @@
 		.mysticbuilds{background-image:url("img/mysticbuilds.png");}
 		.mota{background-image:url("img/mota.jpg");}
 		.erp{background-image:url("img/erp.png");}
-		
+		.doppelganger{background-image:url("img/doppelganger.jpg");}
+
 		.Timer {
 			background: rgba(0, 0, 0, 0.1);
 			margin-top: 30px;
@@ -136,6 +137,12 @@
 				<div class="Timer"></div>
 			</div>
 		</div>
+		<div class="row doppelganger">
+			<div class="content">
+				<h2>TIME SINCE DOPPELGANGER GOT BUGGED: </h2>
+				<div class="Timer"></div>
+			</div>
+		</div>
 	</body>
 	<script>
 		// releases
@@ -148,7 +155,8 @@
 		var mysticbuilds = new Date("dec 26, 2021 18:00:00").getTime();
 		var mota = new Date("oct 17, 2021 18:00:00").getTime();
 		var erp = new Date("jul 18, 2021 18:00:00").getTime();
-		
+		var doppelganger = new Date("may 11, 2021 18:00:00").getTime();
+
 		var timers = document.getElementsByClassName("Timer");
 		for (var i = 0; i < timers.length; i++) {
 			switch ((timers[i].parentElement).parentElement.classList[1]) {
@@ -178,6 +186,9 @@
 					break;
 				case "erp":
 					startCD(timers[i], erp);
+					break;
+				case "doppelganger":
+					startCD(timers[i], doppelganger);
 					break;
 			}
 		}
