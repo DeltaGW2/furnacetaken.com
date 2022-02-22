@@ -50,6 +50,7 @@
 		.mota{background-image:url("img/mota.jpg");}
 		.erp{background-image:url("img/erp.png");}
 		.doppelganger{background-image:url("img/doppelganger.jpg");}
+		.fractal-leaderboards{background-image:url("img/fractal-leaderboards.png");}
 
 		.Timer {
 			background: rgba(0, 0, 0, 0.1);
@@ -121,6 +122,12 @@
 				<div class="Timer"></div>
 			</div>
 		</div>
+		<div class="row fractal-leaderboards">
+			<div class="content">
+				<h2>Time since Fractal Leaderboards were announced</h2>
+				<div class="Timer"></div>
+			</div>
+		</div>
 		<div class="row dungeons">
 			<div class="content">
 				<h2>Time since last Dungeon</h2>
@@ -137,14 +144,14 @@
 		<div class="row mota">
 			<div class="content">
 				<h2>Time since last PvP Tournament</h2>
-				<h4>(Masters of the Arena)</h4>
+				<h4>(Hardstuck Conquest League)</h4>
 				<div class="Timer"></div>
 			</div>
 		</div>
 		<div class="row erp">
 			<div class="content">
 				<h2>Time since last Raid Tournament</h2>
-				<h4>(Elitist Raiding Party 3)</h4>
+				<h4>(Hardstuck Raiding Party)</h4>
 				<div class="Timer"></div>
 			</div>
 		</div>
@@ -177,6 +184,7 @@
 				case "mota": 		 startCD(timers[i], new Date("oct 17, 2021 18:00:00").getTime()); break;
 				case "erp": 		 startCD(timers[i], new Date("jul 18, 2021 18:00:00").getTime()); break;
 				case "doppelganger": startCD(timers[i], new Date("may 11, 2021 18:00:00").getTime()); break;
+				case "fractal-leaderboards": startCD(timers[i], new Date("jul 30, 2015 18:00:00").getTime()); break;
 			}
 		}
 		
