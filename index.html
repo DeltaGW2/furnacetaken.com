@@ -7,16 +7,20 @@
 	</head>
 	<style>
 		html,body {
-			font-family:"Cronos Pro";
-			color:#FFFFFF;
+			font-family: "Cronos Pro";
+			color: #FFFFFF;
 			text-shadow: 0 0 2px #000000, 0 0 2px #000000, 0 0 2px #000000;
-			margin:0;
+			margin: 0;
 			height: 100%;
+		}
+		h1, h2, h3, h4 {
+			margin-block: 0;
+			text-transform: uppercase;
 		}
 		
 		@font-face {
-			font-family:"Cronos Pro";
-			src:url('fonts/CronosPro.ttf');
+			font-family: "Cronos Pro";
+			src: url('fonts/CronosPro.ttf');
 		}
 		
 		.row {
@@ -38,6 +42,7 @@
 		.fractals{background-image:url("img/fractals.png");}
 		.raids{background-image:url("img/raids.png");}
 		.strikes{background-image:url("img/strikes.png");}
+		.alliances{background-image:url("img/alliances.png");}
 		.dungeons{background-image:url("img/dungeons.png");}
 		.drms{background-image:url("img/drms.png");}
 		.balance{background-image:url("img/balance.png");}
@@ -85,111 +90,93 @@
 	<body>
 		<div class="row fractals">
 			<div class="content">
-				<h2>TIME SINCE SUNQUA PEAK RELEASED: </h2>
+				<h2>Time since last Fractal</h2>
+				<h4>(Sunqua Peak)</h4>
 				<div class="Timer"></div>
 			</div>
 		</div>
 		<div class="row raids">
 			<div class="content">
-				<h2>TIME SINCE THE KEY OF AHDASHIM RELEASED: </h2>
+				<h2>Time since last Raid</h2>
+				<h4>(The Key of Ahdashim)</h4>
 				<div class="Timer"></div>
 			</div>
 		</div>
 		<div class="row balance">
 			<div class="content">
-				<h2>TIME SINCE LAST BALANCE PATCH: </h2>
-				<div class="Timer"></div>
-			</div>
-		</div>
-		<div class="row mysticbuilds">
-			<div class="content">
-				<h2>TIME SINCE LAST MYSTIC BUILDS: </h2>
-				<div class="Timer"></div>
-			</div>
-		</div>
-		<div class="row mota">
-			<div class="content">
-				<h2>TIME SINCE LAST PVP TOURNAMENT: </h2>
-				<div class="Timer"></div>
-			</div>
-		</div>
-		<div class="row erp">
-			<div class="content">
-				<h2>TIME SINCE LAST RAID TOURNAMENT: </h2>
+				<h2>Time since last Balance Patch</h2>
 				<div class="Timer"></div>
 			</div>
 		</div>
 		<div class="row strikes">
 			<div class="content">
-				<h2>TIME SINCE COLD WAR RELEASED: </h2>
+				<h2>Time since Last Strike Mission</h2>
+				<h4>(Cold War)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row alliances">
+			<div class="content">
+				<h2>Time since Alliances were announced</h2>
 				<div class="Timer"></div>
 			</div>
 		</div>
 		<div class="row dungeons">
 			<div class="content">
-				<h2>TIME SINCE AETHERBLADE RETREAT RELEASED: </h2>
+				<h2>Time since last Dungeon</h2>
+				<h4>(Aetherblade Retreat)</h4>
 				<div class="Timer"></div>
 			</div>
 		</div>
 		<div class="row drms">
 			<div class="content">
-				<h2>TIME SINCE CHAMPIONS CHAPTER 3 RELEASED: </h2>
+				<h2>Time since last Dragon Response Mission</h2>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row mota">
+			<div class="content">
+				<h2>Time since last PvP Tournament</h2>
+				<h4>(Masters of the Arena)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row erp">
+			<div class="content">
+				<h2>Time since last Raid Tournament</h2>
+				<h4>(Elitist Raiding Party 3)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row mysticbuilds">
+			<div class="content">
+				<h2>Time since last Mystic Builds</h2>
 				<div class="Timer"></div>
 			</div>
 		</div>
 		<div class="row doppelganger">
 			<div class="content">
-				<h2>TIME SINCE DOPPELGANGER GOT BUGGED: </h2>
+				<h2>Time since Doppelganger got bugged</h2>
+				<h4>(Mike needs help)</h4>
 				<div class="Timer"></div>
 			</div>
 		</div>
 	</body>
 	<script>
-		// releases
-		var fractals = new Date("sep 15, 2020 18:00:00").getTime();
-		var raids = new Date("jun 11, 2019 18:00:00").getTime();
-		var balance = new Date("nov 30, 2021 18:00:00").getTime();
-		var strikes = new Date("may 26, 2020 18:00:00").getTime();
-		var dungeons = new Date("jun 25, 2013 18:00:00").getTime();
-		var drms = new Date("mar 9, 2021 18:00:00").getTime();
-		var mysticbuilds = new Date("dec 26, 2021 18:00:00").getTime();
-		var mota = new Date("oct 17, 2021 18:00:00").getTime();
-		var erp = new Date("jul 18, 2021 18:00:00").getTime();
-		var doppelganger = new Date("may 11, 2021 18:00:00").getTime();
-
 		var timers = document.getElementsByClassName("Timer");
 		for (var i = 0; i < timers.length; i++) {
 			switch ((timers[i].parentElement).parentElement.classList[1]) {
-				case "fractals":
-					startCD(timers[i], fractals);
-					break;
-				case "raids":
-					startCD(timers[i], raids);
-					break;
-				case "balance":
-					startCD(timers[i], balance);
-					break;
-				case "strikes":
-					startCD(timers[i], strikes);
-					break;
-				case "dungeons":
-					startCD(timers[i], dungeons);
-					break;
-				case "drms":
-					startCD(timers[i], drms);
-					break;
-				case "mysticbuilds":
-					startCD(timers[i], mysticbuilds);
-					break;
-				case "mota":
-					startCD(timers[i], mota);
-					break;
-				case "erp":
-					startCD(timers[i], erp);
-					break;
-				case "doppelganger":
-					startCD(timers[i], doppelganger);
-					break;
+				case "fractals": 	 startCD(timers[i], new Date("sep 15, 2020 18:00:00").getTime()); break;
+				case "raids": 	 	 startCD(timers[i], new Date("jun 11, 2019 18:00:00").getTime()); break;
+				case "balance": 	 startCD(timers[i], new Date("nov 30, 2021 18:00:00").getTime()); break;
+				case "strikes": 	 startCD(timers[i], new Date("may 26, 2020 18:00:00").getTime()); break;
+				case "alliances": 	 startCD(timers[i], new Date("feb 1, 2018 18:00:00").getTime()); break;
+				case "dungeons": 	 startCD(timers[i], new Date("jun 25, 2013 18:00:00").getTime()); break;
+				case "drms": 		 startCD(timers[i], new Date("mar 9, 2021 18:00:00").getTime()); break;
+				case "mysticbuilds": startCD(timers[i], new Date("jan 29, 2022 18:00:00").getTime()); break;
+				case "mota": 		 startCD(timers[i], new Date("oct 17, 2021 18:00:00").getTime()); break;
+				case "erp": 		 startCD(timers[i], new Date("jul 18, 2021 18:00:00").getTime()); break;
+				case "doppelganger": startCD(timers[i], new Date("may 11, 2021 18:00:00").getTime()); break;
 			}
 		}
 		
