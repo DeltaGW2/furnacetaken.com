@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+	<head>
+		<title>FurnaceTaken</title>
+		<meta charset="utf-8">
+		<meta content="It's on the table." property="og:title" />
+		<meta content="A collection of what's on ArenaNet's GIGANTIC table." property="og:description" />
+		<meta content="https://itsonthetable.github.io" property="og:url" />
+		<meta content="https://itsonthetable.github.io/favicon.png" property="og:image" />
+		<meta content="#DC241F" data-react-helmet="true" name="theme-color" />
+		<link rel="shortcut icon" href="favicon.png" type="image/png">
+	</head>
+	<style>
+		html,body {
+			font-family: "Cronos Pro";
+			color: #FFFFFF;
+			text-shadow: 0 0 2px #000000, 0 0 2px #000000, 0 0 2px #000000;
+			margin: 0;
+			height: 100%;
+		}
+		h1, h2, h3, h4 {
+			margin-block: 0;
+			text-transform: uppercase;
+		}
+		
+		@font-face {
+			font-family: "Cronos Pro";
+			src: url("fonts/CronosPro.ttf");
+		}
+		
+		.row {
+			background-position: center;
+			background-size: cover;
+			display: flex;
+			flex-flow: column;
+			height: 33.33%;
+			text-align: center;
+			font-size: 2em;
+		}
+		.content {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
+		#fractals{background-image:url("img/fractals.png");}
+		#raids{background-image:url("img/raids.png");}
+		#strikes{background-image:url("img/strikes.png");}
+		#alliances{background-image:url("img/alliances.png");}
+		#dungeons{background-image:url("img/dungeons.png");}
+		#drms{background-image:url("img/drms.png");}
+		#balance-patch{background-image:url("img/balance-patch.png");}
+		#mysticbuilds{background-image:url("img/mysticbuilds.png");}
+		#pvp-tournament{background-image:url("img/pvp-tournament.png");}
+		#raid-tournament{background-image:url("img/raid-tournament.png");}
+		#doppelganger{background-image:url("img/doppelganger.jpg");}
+		#fractal-leaderboards{background-image:url("img/fractal-leaderboards.png");}
+
+		.Timer {
+			background: rgba(0, 0, 0, 0.1);
+			margin-top: 30px;
+			width: 100%;
+			height: 120px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.Timer > div {
+			position: relative;
+			width: 120px;
+			color: #fff;
+			font-size: 3rem;
+			margin: 0 15px ;
+			margin-top: -25px;
+		}
+		.Timer > div:before {
+			content: "text";
+			position: absolute;
+			bottom: -30px;
+			left: 0;
+			width: 100%;
+			height: 35px;
+			color: #fff;
+			font-size: 2rem;
+			line-height: 35px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+
+		.Timer > div#day:before { content: "Days"; }
+		.Timer > div#hour:before { content: "Hours"; }
+		.Timer > div#minute:before { content: "Minutes"; }
+		.Timer > div#second:before { content: "Seconds"; }
+	</style>
+	<body>
+		<div class="row" id="fractals">
+			<div class="content">
+				<h2>Time since last Fractal</h2>
+				<h4>(Sunqua Peak)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="raids">
+			<div class="content">
+				<h2>Time since last Raid</h2>
+				<h4>(The Key of Ahdashim)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="balance-patch">
+			<div class="content">
+				<h2>Time since last Balance Patch</h2>
+				<h4>(Constantly hydrated)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="strikes">
+			<div class="content">
+				<h2>Time since Last Strike Mission</h2>
+				<h4>(Kaineng Overlook CM)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="alliances">
+			<div class="content">
+				<h2>Time since Alliances were announced</h2>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="fractal-leaderboards">
+			<div class="content">
+				<h2>Time since Fractal Leaderboards were announced</h2>
+				<h4>(Don't mention this to Nike)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="dungeons">
+			<div class="content">
+				<h2>Time since last Dungeon</h2>
+				<h4>(Aetherblade Retreat)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="drms">
+			<div class="content">
+				<h2>Time since last Dragon Response Mission</h2>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="pvp-tournament">
+			<div class="content">
+				<h2>Time since last PvP Tournament</h2>
+				<h4>(Hardstuck Conquest League 3)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="raid-tournament">
+			<div class="content">
+				<h2>Time since last Raid Tournament</h2>
+				<h4>(Hardstuck Raiding Party)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="mysticbuilds">
+			<div class="content">
+				<h2>Time since last Mystic Builds</h2>
+				<div class="Timer"></div>
+			</div>
+		</div>
+		<div class="row" id="doppelganger">
+			<div class="content">
+				<h2>Time since Doppelganger got bugged</h2>
+				<h4>(Mike needs help)</h4>
+				<div class="Timer"></div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var timers = document.getElementsByClassName("Timer");
+		for (var i = 0; i < timers.length; i++) {
+			switch ((timers[i].parentElement).parentElement.id) {
+				case "fractals": 	 			startCD(timers[i], new Date("sep 15, 2020 18:00:00").getTime()); break;
+				case "raids": 	 	 			startCD(timers[i], new Date("jun 11, 2019 18:00:00").getTime()); break;
+				case "balance-patch": 	 		startCD(timers[i], new Date("may 10, 2022 18:00:00").getTime()); break;
+				case "strikes": 	 			startCD(timers[i], new Date("may 24, 2022 18:00:00").getTime()); break;
+				case "alliances": 	 			startCD(timers[i], new Date("feb 1, 2018 18:00:00").getTime()); break;
+				case "dungeons": 	 			startCD(timers[i], new Date("jun 25, 2013 18:00:00").getTime()); break;
+				case "drms": 		 			startCD(timers[i], new Date("mar 9, 2021 18:00:00").getTime()); break;
+				case "mysticbuilds": 			startCD(timers[i], new Date("jan 29, 2022 18:00:00").getTime()); break;
+				case "pvp-tournament": 		 	startCD(timers[i], new Date("may 22, 2022 18:00:00").getTime()); break;
+				case "raid-tournament":			startCD(timers[i], new Date("jul 18, 2021 18:00:00").getTime()); break;
+				case "doppelganger":			startCD(timers[i], new Date("may 11, 2021 18:00:00").getTime()); break;
+				case "fractal-leaderboards":	startCD(timers[i], new Date("jul 30, 2015 18:00:00").getTime()); break;
+			}
+		}
+		
+		function startCD(timerElement, releaseDate) {
+			var dayNode = document.createElement("div");
+			dayNode.setAttribute("id", "day");
+			var hourNode = document.createElement("div");
+			hourNode.setAttribute("id", "hour");
+			var minuteNode = document.createElement("div");
+			minuteNode.setAttribute("id", "minute");
+			var secondNode = document.createElement("div");
+			secondNode.setAttribute("id", "second");
+			
+			console.log(timerElement);
+			
+			timerElement.appendChild(dayNode);
+			timerElement.appendChild(hourNode);
+			timerElement.appendChild(minuteNode);
+			timerElement.appendChild(secondNode);
+			
+			setInterval(function() {
+				var now = new Date().getTime();
+				var diff = now - releaseDate;
+				
+				var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+				
+				dayNode.innerHTML = days;
+				hourNode.innerHTML = hours;
+				minuteNode.innerHTML = minutes;
+				secondNode.innerHTML = seconds;
+			}, 1000);
+		}
+	</script>
+</html>

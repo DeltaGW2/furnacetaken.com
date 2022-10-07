@@ -1,0 +1,482 @@
+{
+    "Raids": {
+        "Spirit Vale": {
+            "Release Date": "nov 17, 2015 18:00:00",
+            "Encounters": {
+                "Vale Guardian": {
+                    "Bugs": {
+                        "2": {
+                            "Description": "Upon death during the 66% and 33% phases, the attunement color may get stuck on top of the character. The group has to die in between Vale Guardian despawning in the middle, and the three guardians spawning",
+                            "Video-Image": "https://youtu.be/TB3lj8WYb_M?t=38",
+                            "Priority": "1"
+                        },
+                        "3": {
+                            "Description": "If the seekers are pushed back by a launch skill (in the video it’s Scrapper’s Explode Gyro), they will only be pushed back visually, meaning they haven’t moved at all and will continue to reach the players while invisible. Supposedly the issue is due to the seekers “hitting something” prior to being launched",
+                            "Video-Image": "https://youtu.be/TB3lj8WYb_M?t=30",
+                            "Priority": "6"
+                        }
+                    }
+                },
+                "Spirit Run": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "Map breaking to skip part of the event",
+                            "Video-Image": "https://youtu.be/22lMq4SAYaY & https://youtu.be/ilzmZcKiVMw",
+                            "Priority": "3"
+                        }
+                    }
+                },
+                "Gorseval": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "For a brief moment, the Charged Souls at 66% and 33% are vulnerable to CC, rendering it possible to pull them. A possible solution is to give the NPCs a 0.5 second invulnerability buff during the spawn animation",
+                            "Video-Image": "https://youtu.be/NEoYWvfdb24?t=29",
+                            "Priority": "1-8"
+                        },
+                        "2": {
+                            "Description": "This may not be a bug, but sometimes Gorseval does the slam to the ground / knockback as its first attack, instead of the usual auto attacks chain pattern",
+                            "Video-Image": "https://youtu.be/zRUoFRgU7is",
+                            "Priority": "1-4"
+                        }
+                    }
+                },
+                "Sabetha the Saboteur": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "Sabetha not despawning and remaining on the platform vulnerable, and without the possibility to start the encounter event again, forcing an instance reset. Killing her in this state doesn’t award loot and does not count towards the weekly clear, which means you have to redo the pre event. From the footage it seems to be related to the group wiping at the end of the flamethrower animation. If the flamethrower ends at 75-50-25% phases and the group wipes, she will be permanently on the platform and invulnerable.",
+                            "Video-Image": "https://youtu.be/LkiRmw5Acwk & https://youtu.be/WLPc5zK3Lmw?t=70 & https://youtu.be/SAtUSccl79E?t=65",
+                            "Priority": "5-9"
+                        },
+                        "2": {
+                            "Description": "If you phase her exactly as she’s starting the flamethrower attack, she may teleport to the cannon and spin there.",
+                            "Video-Image": "https://imgur.com/868WCLq",
+                            "Priority": "3"
+                        },
+                        "3": {
+                            "Description": "Map break",
+                            "Video-Image": "https://youtu.be/sNg7F1R2sKA",
+                            "Priority": "1"
+                        }
+                    }
+                }
+            }
+        },
+        "Salvation Pass": {
+            "Release Date": "jan 12, 2016 18:00:00",
+            "Encounters": {
+                "Slothasor": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "Ability for players to stand on the rocks and only have to deal with the tantrum mechanic.",
+                            "Video-Image": "https://youtu.be/Tkl50l-Q330",
+                            "Priority": "4-8"
+                        },
+                        "2": {
+                            "Description": "Map Break",
+                            "Video-Image": "https://youtu.be/tfEdOLhFXXg",
+                            "Priority": "1"
+                        }
+                    }
+                },
+                "Bandit Trio": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Matthias Gabrel": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "Instantly shooting projectiles without creating the dome. The dome should have 100% priority of usage when beginning the encounter and before the projectiles attack.",
+                            "Video-Image": "",
+                            "Priority": "5"
+                        },
+                        "2": {
+                            "Description": "If you start the fight and instantly /gg, the map remains in an in-combat state and the respawn doesn’t work correctly. To fix this, you need to start the fight for a few seconds and then reset again. We noticed this happens primarily when someone is left outside of the arena when initially starting the encounter.",
+                            "Video-Image": "https://youtu.be/N1HDlNTb87w",
+                            "Priority": "5-9"
+                        }
+                    }
+                }
+            }
+        },
+        "Stronghold of the Faithful": {
+            "Release Date": "jun 14, 2016 18:00:00",
+            "Encounters": {
+                "Escort Glenna": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "If /gg’ing the initial dialogue, you may not be able to interact with Glenna, forcing a map reset",
+                            "Video-Image": "https://youtu.be/w3iI7gdmsNc?t=999",
+                            "Priority": "4-9"
+                        },
+                        "2": {
+                            "Description": "/gg’ing after interacting with Glenna makes it impossible to move her.",
+                            "Video-Image": "https://youtu.be/w3iI7gdmsNc?t=1056 & https://youtu.be/w3iI7gdmsNc?t=834",
+                            "Priority": "4-9"
+                        },
+                        "3": {
+                            "Description": "Due to the /gg inconsistency at the start, you can bug her, making it possible to start the encounter while the group is out of combat for the entire duration. Loot is awarded for this exploit.",
+                            "Video-Image": "https://youtu.be/w3iI7gdmsNc?t=609",
+                            "Priority": "8"
+                        },
+                        "4": {
+                            "Description": "Using the Mesmer elite Signet of Humility, will turn the Wargs into moas. When in this form, the “warg” will attack players. Once the transformation ends, they will turn back into a warg, however, they will no longer move or attack players or Glenna.",
+                            "Video-Image": " https://youtu.be/E70zSuz_yKI",
+                            "Priority": "4"
+                        },
+                        "5": {
+                            "Description": "There is a spot near the beginning of the escort event that you can hide behind a tent. This will cause the enemies that spawn near the end of the event to run past the group, to the other side of the bridge at the beginning of the event. Once all the mobs that spawn have run past the group, escort can be done without mobs spawning any longer, since no new mobs spawn, unless you kill the already living ones.",
+                            "Video-Image": "https://youtu.be/iDUNFc8zgLM",
+                            "Priority": "3-8"
+                        }
+                    }
+                },
+                "Keep Construct": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "You can use Daredevil’s Vault to map break, and run “basement strat KC”. The angle in the screenshots may be incorrect but it is possible, however we do not have a video. A suggestion is to add an invisible wall on top of the two sections (left and right) and all around the underside of the arena.",
+                            "Video-Image": "https://youtu.be/girVUGyWU_c",
+                            "Priority": "8"
+                        },
+                        "2": {
+                            "Description": "If you don’t kill the Radiant and Crimson Phantasms, and you break KC breakbar before the Phantasms explode but they have already been spawned for some time, they may still explode, killing the group after the KC does his post-CC animation.",
+                            "Video-Image": "https://youtu.be/w3iI7gdmsNc?t=1074",
+                            "Priority": "7"
+                        },
+                        "3": {
+                            "Description": "The Challenge Mote deactivates after each wipe and the text doesn’t appear in chat when activated, unlike all other CM activations.",
+                            "Video-Image": "",
+                            "Priority": "5"
+                        },
+                        "4": {
+                            "Description": "After CCing, you can pull the “xera’s phantasms” out of their green circles, moving the location you have to stand to prevent a party wipe out of the green circles.",
+                            "Video-Image": "https://youtu.be/r3IjONpI1ME",
+                            "Priority": "1-8"
+                        }
+                    }
+                },
+                "Twisted Castle": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Xera": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "Standing on the extreme edge of the platform prevents all of the teleports for the 40% and 20% mechanics.",
+                            "Video-Image": "https://youtu.be/XJKRgTtrTsI?t=171",
+                            "Priority": "10"
+                        },
+                        "2": {
+                            "Description": "The Special action key may be unavailable if the squad’s DPS is too high and the same person gets selected by the mechanic twice.",
+                            "Video-Image": "https://youtu.be/w3iI7gdmsNc?t=254 & https://youtu.be/w3iI7gdmsNc?t=1256",
+                            "Priority": "7"
+                        },
+                        "3": {
+                            "Description": "If the 20% island spawns before the 40% one is done with the mechanic, the platform will disappear and players will fall to their death.",
+                            "Video-Image": "https://youtu.be/w3iI7gdmsNc?t=1086",
+                            "Priority": "7"
+                        },
+                        "4": {
+                            "Description": "If players destroy the crystal on the 40% platform as the 20% group gets teleported out, the 20% platform group will be insta teleported back to the main platform as well",
+                            "Video-Image": "https://youtu.be/Dgs6Jk8PsIQ?t=219 & https://youtu.be/E0jjNq5CjE8?t=233",
+                            "Priority": "7"
+                        },
+                        "5": {
+                            "Description": "Continuum split teleports you back from the island mechanic, skipping it entirely",
+                            "Video-Image": "https://youtu.be/tFL0ZlwKsAA?t=195",
+                            "Priority": "8"
+                        },
+                        "6": {
+                            "Description": "Players can get stuck in the floor of the platform if they glide slightly early.",
+                            "Video-Image": "https://youtu.be/L9j9xU3Za5k",
+                            "Priority": "3"
+                        }
+                    }
+                }
+            }
+        },
+        "Bastion of the Penitent": {
+            "Release Date": "feb 8, 2017 18:00:00",
+            "Encounters": {
+                "Cairn the Indomitable": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "This one might be intended, as the mechanic has a minimum range. If everyone is in the hitbox, no one gets the agony mechanic until someone moves out.",
+                            "Video-Image": "",
+                            "Priority": ""
+                        },
+                        "2": {
+                            "Description": "You can glide down to the platform and let the last person activate the CM, meaning only the last person has the timer ticking before the encounter begins. This causes the ability to be invulnerable during the first green mechanic, preventing the application of the countdown debuff on the player.",
+                            "Video-Image": "https://youtu.be/121l4FZJjOA",
+                            "Priority": "8"
+                        },
+                        "3": {
+                            "Description": "Enabling CM, gliding down to the platform, disabling CM, forces the CM mechanic on people who went down to the platform during the normal mode kill.",
+                            "Video-Image": "https://youtu.be/Sqv-XfzWAAM",
+                            "Priority": "6"
+                        }
+                    }
+                },
+                "Mursaat Overseer": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "The boss sometimes fails to despawn and you are able to kill it without mechanics. This gives no loot but counts as a CM if the CM was activated. If players pick up claim, dispel and protect, the loot will be awarded. You also still take area damage when you walk into the arena. This bug is supposedly caused by conditions remaining on the boss when the squad quickly respawns after defeat. This issue can be worked around by turning on/off the CM, forcing the boss to respawn.",
+                            "Video-Image": "https://youtu.be/nqqOh4mfG5s",
+                            "Priority": "10"
+                        }
+                    }
+                },
+                "Samarog": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "Samarog is able to walk out of her den and/or do attack animations before Rigom is dead during the 66% and 33% phases. This may be caused by Rigom and Guldhem dying at the same time but Rigom regaining health by dying moments before.",
+                            "Video-Image": "https://youtu.be/QmMbtFWDwlg",
+                            "Priority": "2"
+                        },
+                        "2": {
+                            "Description": "Split adds will sometimes respawn.",
+                            "Video-Image": "https://youtu.be/blncfui4bMI",
+                            "Priority": "2-9"
+                        },
+                        "3": {
+                            "Description": "Samarog can despawn during the encounter if, during the CC, the fixated player is out of bounds.",
+                            "Video-Image": "https://youtu.be/Hwj9I8DA4gs",
+                            "Priority": "9"
+                        },
+                        "4": {
+                            "Description": "In the transition between Mursaat Overseer and Samarog, if you reach the door too quickly, the boss won’t spawn and you must restart the instance.",
+                            "Video-Image": "",
+                            "Priority": "9"
+                        },
+                        "5": {
+                            "Description": "If, due to good DPS, your team lines up Samarog's CC mechanic from 70% with 66% phase - when samarog gets her invulnerable buff- she will do the CC mechanic while being invulnerable. She will still be killing your fixate, but players are unable to use CC to break the bar - resulting in the fixate’s death. This is the same at 40% CC mechanic with 33% invulnerable phase, but requires way more damage for this to happen.",
+                            "Video-Image": "",
+                            "Priority": "6-7"
+                        }
+                    }
+                },
+                "Samarog CM": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "Samarog CM spears can be targeted by Necromancer’s Spectral Grasp and Epidemic, but the Guardian Greatsword #5 Binding Blade can’t do the same. Unknown which of the two is the correct behavior.",
+                            "Video-Image": "https://youtu.be/AUUUfqo-_4Y & https://youtu.be/N-ZX8yGwtoo & https://youtu.be/iNDGvYbX8Aw",
+                            "Priority": "3-5"
+                        },
+                        "2": {
+                            "Description": "Ability to move with the spear mechanic in CM with movement skills such as vault.",
+                            "Video-Image": "",
+                            "Priority": "4"
+                        }
+                    }
+                },
+                "Deimos": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "Being able to skip the greens via Continuum Split, as with Xera.",
+                            "Video-Image": "https://youtu.be/g06RglVUUyY?t=782",
+                            "Priority": "8"
+                        },
+                        "2": {
+                            "Description": "Too many hands on the platform cause culling of character models. If a player with the green mechanic is not rendered neither will the mechanic AoE (haven’t been able to verify if it hasn’t been fixed). Additionally, having a red AoE outline for the hands would help with seeing their location in case of players utilizing low character model limit or too many hands in the arena.",
+                            "Video-Image": "",
+                            "Priority": "7"
+                        },
+                        "3": {
+                            "Description": "Rare case of Deimos not despawning after the 10% phase is over.",
+                            "Video-Image": "https://youtu.be/5DJswENKKDU",
+                            "Priority": "1-2"
+                        },
+                        "4": {
+                            "Description": "If you phase the boss from > 61.01% to < 59.99% the black/oils mechanic won’t get triggered and will never spawn. This bug was found out due to Dragon’s Slash of Bladesworn dealing an insane amount of damage in a single hit. Should be easily fixable by setting the mechanic to spawn at <= 60% and not at = 60%.",
+                            "Video-Image": "https://youtu.be/Zxt7SUYSnsI",
+                            "Priority": "8-9"
+                        },
+                        "5": {
+                            "Description": "Due to Dragon’s Slash once again, getting the boss way below from > 11.01% to < 9.99% on the main platform breaks the whole fight.",
+                            "Video-Image": "https://youtu.be/3RNvr6RYtXQ",
+                            "Priority": "8-9"
+                        },
+                        "6": {
+                            "Description": "If one of the sauls isn't phased to 50% health before the next green happens, you will end up with 2 sauls in the deimos realm (which is correct) but if you phase one of those sauls at 50%, the teleport will be triggered twice and you will be stuck in the realm without the ability to exit.",
+                            "Video-Image": "https://youtu.be/eqPTouWodUw",
+                            "Priority": "7"
+                        }
+                    }
+                }
+            }
+        },
+        "Hall of Chains": {
+            "Release Date": "nov 28, 2017 18:00:00",
+            "Encounters": {
+                "Soulless Horror": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "River of Souls": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Broken King": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Eater of Souls": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Eyes of Judgment": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Dhuum": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                }
+            }
+        },
+        "Mythwright Gambit": {
+            "Release Date": "sep 18, 2018 18:00:00",
+            "Encounters": {
+                "Conjured Amalgamated": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Ooze": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Twin Largos": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Qadim": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                }
+            }
+        },
+        "The Key of Ahdashim": {
+            "Release Date": "jun 11, 2019 18:00:00",
+            "Encounters": {
+                "Gate": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Cardinal Sabir": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Cardinal Adina": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                },
+                "Qadim the Peerless": {
+                    "Bugs": {
+                        "1": {
+                            "Description": "",
+                            "Video-Image": "",
+                            "Priority": ""
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Strikes": {
+        "Icebrood Saga": {
+            "Release Date": "",
+            "Encounters": {
+                "Icebrood Construct": {},
+                "Voice and Hammer of the Fallen": {},
+                "Fraenir of Jormag": {},
+                "Boneskinner": {},
+                "Whisper of Jormag": {},
+                "Cold War": {}
+            }
+        },
+        "End of Dragons": {
+            "Release Date": "",
+            "Encounters": {
+                "Mai Trin": {},
+                "Ankka": {},
+                "Minister Li": {},
+                "Dragonvoid": {}
+            }
+        }
+    },
+    "Fractals": {}
+}
