@@ -33,7 +33,7 @@
 				var parser = new DOMParser();
 				var doc = parser.parseFromString(html, 'text/html');
 
-				var doc = document.getElementsByTagName("script");
+				var scripts = document.getElementsByTagName("script");
 
 				var script = scripts[9].innerText;
 				var partners;
