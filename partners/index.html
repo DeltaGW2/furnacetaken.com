@@ -28,7 +28,9 @@
 		fetch("https://welcome.guildwars2.com/en/partner-program", { mode: "no-cors"})
 			.then((response) => response.text())
 			.then(function (html) {
-
+				
+				console.log(html);
+				
 				// Convert the HTML string into a document object
 				var parser = new DOMParser();
 				var doc = parser.parseFromString(html, 'text/html');
