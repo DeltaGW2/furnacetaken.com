@@ -25,7 +25,7 @@
 		
 	</body>
 	<script>
-		fetch("https://welcome.guildwars2.com/en/partner-program", { mode: "cors", headers: { "Access-Control-Allow-Origin":"*" }})
+		fetch("https://welcome.guildwars2.com/en/partner-program", { mode: "no-cors"})
 			.then((response) => response.text())
 			.then(function (html) {
 
