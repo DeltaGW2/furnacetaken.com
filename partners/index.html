@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<title>FurnaceTaken</title>
+		<meta charset="utf-8">
+		<meta content="It's on the table." property="og:title" />
+		<meta content="Who's sitting at the round table of the partner program?" property="og:description" />
+		<meta content="https://furnacetaken.com/partners" property="og:url" />
+		<meta content="https://furnacetaken.com/favicon.png" property="og:image" />
+		<meta content="#DC241F" data-react-helmet="true" name="theme-color" />
+		<link rel="shortcut icon" href="../favicon.png" type="image/png">
+	</head>
+	<style>
+		html,body
+		{
+			font-family: "Cronos Pro";
+			color: #FFFFFF;
+			text-shadow: 0 0 2px #000000, 0 0 2px #000000, 0 0 2px #000000;
+			margin: 0;
+			height: 100%;
+			background-image: url("../img/partners.jpg");
+		}
+	</style>
+	<body>
+		
+	</body>
+	<script>
+		fetch("https://welcome.guildwars2.com/en/partner-program")
+			.then((response) => response.text())
+			.then(function (html) {
+
+				// Convert the HTML string into a document object
+				var parser = new DOMParser();
+				var doc = parser.parseFromString(html, 'text/html');
+
+				var doc = document.getElementsByTagName("script");
+
+				var script = scripts[9].innerText;
+				var partners;
+
+				var start = script.indexOf("partners = [{");
+
+				script = script.substring(start + "partners = ".length);
+
+				var end = script.indexOf("}}],");
+
+				script = script.substring(0, end + 3);
+
+				var partners = JSON.parse(script);
+
+				for (var i = 0; i < partners.length; i++)
+				{
+					delete partners[i].avatar;
+				}
+
+				console.log(partners);
+			});
+	</script>
+</html>
