@@ -25,37 +25,42 @@
 		
 	</body>
 	<script>
-		fetch("https://welcome.guildwars2.com/partner-program", { mode: "no-cors"})
-			.then((response) => response.text())
-			.then(function (html) {
+		var req = new XMLHttpRequest();
+
+		req.open('GET', 'https://welcome.guildwars2.com/partner-program', false);
+		req.send(null);
+
+		if(req.status == 200)
+		{
+			var html = responseText;
+			
+			console.log(html);
 				
-				console.log(html);
-				
-				// Convert the HTML string into a document object
-				var parser = new DOMParser();
-				var doc = parser.parseFromString(html, 'text/html');
+			// Convert the HTML string into a document object
+			var parser = new DOMParser();
+			var doc = parser.parseFromString(html, 'text/html');
 
-				var scripts = document.getElementsByTagName("script");
+			var scripts = document.getElementsByTagName("script");
 
-				var script = scripts[9].innerText;
-				var partners;
+			var script = scripts[9].innerText;
+			var partners;
 
-				var start = script.indexOf("partners = [{");
+			var start = script.indexOf("partners = [{");
 
-				script = script.substring(start + "partners = ".length);
+			script = script.substring(start + "partners = ".length);
 
-				var end = script.indexOf("}}],");
+			var end = script.indexOf("}}],");
 
-				script = script.substring(0, end + 3);
+			script = script.substring(0, end + 3);
 
-				var partners = JSON.parse(script);
+			var partners = JSON.parse(script);
 
-				for (var i = 0; i < partners.length; i++)
-				{
-					delete partners[i].avatar;
-				}
-
-				console.log(partners);
-			});
+			for (var i = 0; i < partners.length; i++)
+			{
+				delete partners[i].avatar;
+			}
+			
+			console.log(partners);
+		}
 	</script>
 </html>
