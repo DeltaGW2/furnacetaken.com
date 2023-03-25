@@ -22,31 +22,38 @@
 		}
 	</style>
 	<body>
-		<iframe id="partnersFrame" style="display: none;" src="https://welcome.guildwars2.com/en/partner-program"></iframe>
+		
 	</body>
 	<script>
-		var doc = document.getElementById("partnersFrame");
-		
-		var scripts = doc.getElementsByTagName("script");
+		fetch("https://welcome.guildwars2.com/en/partner-program", { mode: "cors", headers: { "Access-Control-Allow-Origin":"*" }})
+			.then((response) => response.text())
+			.then(function (html) {
 
-		var script = scripts[9].innerText;
-		var partners;
+				// Convert the HTML string into a document object
+				var parser = new DOMParser();
+				var doc = parser.parseFromString(html, 'text/html');
 
-		var start = script.indexOf("partners = [{");
+				var scripts = doc.getElementsByTagName("script");
 
-		script = script.substring(start + "partners = ".length);
+				var script = scripts[9].innerText;
+				var partners;
 
-		var end = script.indexOf("}}],");
+				var start = script.indexOf("partners = [{");
 
-		script = script.substring(0, end + 3);
+				script = script.substring(start + "partners = ".length);
 
-		var partners = JSON.parse(script);
+				var end = script.indexOf("}}],");
 
-		for (var i = 0; i < partners.length; i++)
-		{
-			delete partners[i].avatar;
-		}
-			
-		console.log(partners);
+				script = script.substring(0, end + 3);
+
+				var partners = JSON.parse(script);
+
+				for (var i = 0; i < partners.length; i++)
+				{
+					delete partners[i].avatar;
+				}
+
+				console.log(partners);
+			});
 	</script>
 </html>
