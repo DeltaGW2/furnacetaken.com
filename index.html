@@ -44,6 +44,7 @@
 		text-align: center;
 		font-size: 2em;
 	}
+
 	.big-row {
 		background-position: center;
 		background-size: cover;
@@ -178,7 +179,7 @@
 			22 Fractals.
 			<br />
 			7 Raids with 21 Bosses and 8 events.
-			<br /> 
+			<br />
 			13 Strike missions, 7 of which with CMs and 2 Joke missions (FS, CW).
 			<br />
 			10 Dragon Response Missions and 1 Instanced World Boss.
@@ -1265,7 +1266,7 @@
 				bar: {
 					horizontal: true,
 					isDumbbell: true,
-					barHeight: "50%",
+					barHeight: "50%"
 				}
 			},
 			xaxis: {
@@ -1285,7 +1286,8 @@
 				colors: undefined,
 				width: 3,
 				dashArray: 0,
-			}
+			},
+			colors: ["#FFFFFF"]
 		};
 
 		var chart = new ApexCharts(document.querySelector("#timeline"), options);
