@@ -331,6 +331,8 @@
 	var newOrder = [];
 
 	window.onload = (event) => {
+		renderTimeline();
+
 		setTimeout(() => {
 			var body = Array.from(document.body.children);
 			body.forEach(element => {
@@ -353,8 +355,6 @@
 			});
 		}, 1000);
 	};
-</script>
-<script>
 	function renderTimeline() {
 		var options = {
 			series: [
@@ -1291,10 +1291,6 @@
 		var chart = new ApexCharts(document.querySelector("#timeline"), options);
 		chart.render();
 	}
-
-	window.onload = (event) => {
-		renderTimeline();
-	};
 </script>
 
 </html>
