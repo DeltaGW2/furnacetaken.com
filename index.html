@@ -1,267 +1,1300 @@
 <!doctype html>
 <html>
-	<head>
-		<title>FurnaceTaken</title>
-		<meta charset="utf-8">
-		<meta content="It's on the table." property="og:title" />
-		<meta content="A collection of what's on ArenaNet's GIGANTIC table." property="og:description" />
-		<meta content="https://furnacetaken.com" property="og:url" />
-		<meta content="https://furnacetaken.com/favicon.png" property="og:image" />
-		<meta content="#DC241F" data-react-helmet="true" name="theme-color" />
-		<link rel="shortcut icon" href="favicon.png" type="image/png">
-	</head>
-	<style>
-		html,body {
-			font-family: "Cronos Pro";
-			color: #FFFFFF;
-			text-shadow: 0 0 2px #000000, 0 0 2px #000000, 0 0 2px #000000;
-			margin: 0;
-			height: 100%;
-		}
-		h1, h2, h3, h4 {
-			margin-block: 0;
-			text-transform: uppercase;
-		}
-		
-		@font-face {
-			font-family: "Cronos Pro";
-			src: url("fonts/CronosPro.ttf");
-		}
-		
-		.row {
-			background-position: center;
-			background-size: cover;
-			display: flex;
-			flex-flow: column;
-			height: 33.33%;
-			text-align: center;
-			font-size: 2em;
-		}
-		.content {
-			position: relative;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-		
-		#fractals{background-image:url("img/fractals.png");}
-		#raids{background-image:url("img/raids.png");}
-		#strikes{background-image:url("img/strikes.png");}
-		#alliances{background-image:url("img/alliances.png");}
-		#dungeons{background-image:url("img/dungeons.png");}
-		#drms{background-image:url("img/drms.png");}
-		#balance-patch{background-image:url("img/balance-patch.png");}
-		#mysticbuilds{background-image:url("img/mysticbuilds.png");}
-		#pvp-tournament{background-image:url("img/pvp-tournament.png");}
-		#raid-tournament{background-image:url("img/raid-tournament.png");}
-		#doppelganger{background-image:url("img/doppelganger.jpg");}
-		#fractal-leaderboards{background-image:url("img/fractal-leaderboards.png");}
-		#fish{background-image:url("img/fish.jpg");}
 
-		.Timer {
-			background: rgba(0, 0, 0, 0.1);
-			margin-top: 30px;
-			width: 100%;
-			height: 120px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.Timer > div {
-			position: relative;
-			width: 120px;
-			color: #fff;
-			font-size: 3rem;
-			margin: 0 15px ;
-			margin-top: -25px;
-		}
-		.Timer > div:before {
-			content: "text";
-			position: absolute;
-			bottom: -30px;
-			left: 0;
-			width: 100%;
-			height: 35px;
-			color: #fff;
-			font-size: 2rem;
-			line-height: 35px;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-		}
+<head>
+	<title>FurnaceTaken</title>
+	<meta charset="utf-8">
+	<meta content="It" s on the table." property="og:title" />
+	<meta content="A collection of what" s on ArenaNet"s GIGANTIC table." property="og:description" />
+	<meta content="https://furnacetaken.com" property="og:url" />
+	<meta content="https://furnacetaken.com/favicon.png" property="og:image" />
+	<meta content="#DC241F" data-react-helmet="true" name="theme-color" />
+	<link rel="shortcut icon" href="favicon.png" type="image/png">
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<style>
+	html,
+	body {
+		font-family: "Cronos Pro";
+		color: #FFFFFF;
+		text-shadow: 0 0 2px #000000, 0 0 2px #000000, 0 0 2px #000000;
+		margin: 0;
+		height: 100%;
+	}
 
-		.Timer > div#day:before { content: "Days"; }
-		.Timer > div#hour:before { content: "Hours"; }
-		.Timer > div#minute:before { content: "Minutes"; }
-		.Timer > div#second:before { content: "Seconds"; }
-	</style>
-	<body>
-		<div class="row" id="fractals">
-			<div class="content">
-				<h2>Time since last Fractal</h2>
-				<h4>(Silent Surf)</h4>
-				<div class="Timer"></div>
-			</div>
+	h1,
+	h2,
+	h3,
+	h4 {
+		margin-block: 0;
+		text-transform: uppercase;
+	}
+
+	@font-face {
+		font-family: "Cronos Pro";
+		src: url("fonts/CronosPro.ttf");
+	}
+
+	.row {
+		background-position: center;
+		background-size: cover;
+		display: flex;
+		flex-flow: column;
+		height: 33.33%;
+		text-align: center;
+		font-size: 2em;
+	}
+	.big-row {
+		background-position: center;
+		background-size: cover;
+		display: flex;
+		flex-flow: column;
+		min-height: 50%;
+		text-align: center;
+		font-size: 2em;
+	}
+
+	.content {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#fractals {
+		background-image: url("img/fractals.png");
+	}
+
+	#raids {
+		background-image: url("img/raids.png");
+	}
+
+	#strikes {
+		background-image: url("img/strikes.png");
+	}
+
+	#alliances {
+		background-image: url("img/alliances.png");
+	}
+
+	#dungeons {
+		background-image: url("img/dungeons.png");
+	}
+
+	#drms {
+		background-image: url("img/drms.png");
+	}
+
+	#balance-patch {
+		background-image: url("img/balance-patch.png");
+	}
+
+	#mysticbuilds {
+		background-image: url("img/mysticbuilds.png");
+	}
+
+	#pvp-tournament {
+		background-image: url("img/pvp-tournament.png");
+	}
+
+	#raid-tournament {
+		background-image: url("img/raid-tournament.png");
+	}
+
+	#doppelganger {
+		background-image: url("img/doppelganger.jpg");
+	}
+
+	#fractal-leaderboards {
+		background-image: url("img/fractal-leaderboards.png");
+	}
+
+	#fish {
+		background-image: url("img/fish.jpg");
+	}
+
+	.Timer {
+		background: rgba(0, 0, 0, 0.1);
+		margin-top: 30px;
+		width: 100%;
+		height: 120px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.Timer>div {
+		position: relative;
+		width: 120px;
+		color: #fff;
+		font-size: 3rem;
+		margin: 0 15px;
+		margin-top: -25px;
+	}
+
+	.Timer>div:before {
+		content: "text";
+		position: absolute;
+		bottom: -30px;
+		left: 0;
+		width: 100%;
+		height: 35px;
+		color: #fff;
+		font-size: 2rem;
+		line-height: 35px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	.Timer>div#day:before {
+		content: "Days";
+	}
+
+	.Timer>div#hour:before {
+		content: "Hours";
+	}
+
+	.Timer>div#minute:before {
+		content: "Minutes";
+	}
+
+	.Timer>div#second:before {
+		content: "Seconds";
+	}
+
+	#timeline {
+		padding: 50px;
+		backdrop-filter: blur(10px);
+	}
+</style>
+
+<body>
+	<div class="big-row" id="fractals">
+		<div id="timeline"></div>
+		<br />
+		<div style="filter: drop-shadow(0 0 5px black);">
+			8 Dungeons.
+			<br />
+			22 Fractals.
+			<br />
+			7 Raids with 21 Bosses and 8 events.
+			<br /> 
+			13 Strike missions, 7 of which with CMs and 2 Joke missions (FS, CW).
+			<br />
+			10 Dragon Response Missions and 1 Instanced World Boss.
 		</div>
-		<div class="row" id="raids">
-			<div class="content">
-				<h2>Time since last Raid</h2>
-				<h4>(The Key of Ahdashim)</h4>
-				<div class="Timer"></div>
-			</div>
+		<br />
+	</div>
+	<div class="row" id="fractals">
+		<div class="content">
+			<h2>Time since last Fractal</h2>
+			<h4>(Silent Surf)</h4>
+			<div class="Timer"></div>
 		</div>
-		<div class="row" id="balance-patch">
-			<div class="content">
-				<h2>Time since last Balance Patch</h2>
-				<h4>(Constantly hydrated.)</h4>
-				<div class="Timer"></div>
-			</div>
+	</div>
+	<div class="row" id="raids">
+		<div class="content">
+			<h2>Time since last Raid</h2>
+			<h4>(The Key of Ahdashim)</h4>
+			<div class="Timer"></div>
 		</div>
-		<div class="row" id="strikes">
-			<div class="content">
-				<h2>Time since Last Strike Mission</h2>
-				<h4>(Old Lion's Court CM)</h4>
-				<div class="Timer"></div>
-			</div>
+	</div>
+	<div class="row" id="balance-patch">
+		<div class="content">
+			<h2>Time since last Balance Patch</h2>
+			<h4>(Constantly hydrated.)</h4>
+			<div class="Timer"></div>
 		</div>
-		<div class="row" id="alliances">
-			<div class="content">
-				<h2>Time since Alliances were announced</h2>
-				<div class="Timer"></div>
-			</div>
+	</div>
+	<div class="row" id="strikes">
+		<div class="content">
+			<h2>Time since Last Strike Mission</h2>
+			<h4>(Old Lion"s Court CM)</h4>
+			<div class="Timer"></div>
 		</div>
-		<div class="row" id="fractal-leaderboards">
-			<div class="content">
-				<h2>Time since Fractal Leaderboards were announced</h2>
-				<h4>(Don't mention this to Nike)</h4>
-				<div class="Timer"></div>
-			</div>
+	</div>
+	<div class="row" id="alliances">
+		<div class="content">
+			<h2>Time since Alliances were announced</h2>
+			<div class="Timer"></div>
 		</div>
-		<div class="row" id="dungeons">
-			<div class="content">
-				<h2>Time since last Dungeon</h2>
-				<h4>(Aetherblade Retreat)</h4>
-				<div class="Timer"></div>
-			</div>
+	</div>
+	<div class="row" id="fractal-leaderboards">
+		<div class="content">
+			<h2>Time since Fractal Leaderboards were announced</h2>
+			<h4>(Don"t mention this to Nike)</h4>
+			<div class="Timer"></div>
 		</div>
-		<div class="row" id="drms">
-			<div class="content">
-				<h2>Time since last Dragon Response Mission</h2>
-				<h4>(Don't worry, they're a joke anyway.)</h4>
-				<div class="Timer"></div>
-			</div>
+	</div>
+	<div class="row" id="dungeons">
+		<div class="content">
+			<h2>Time since last Dungeon</h2>
+			<h4>(Aetherblade Retreat)</h4>
+			<div class="Timer"></div>
 		</div>
-		<div class="row" id="pvp-tournament">
-			<div class="content">
-				<h2>Time since last PvP Tournament</h2>
-				<h4>(Masters of the Arena II)</h4>
-				<div class="Timer"></div>
-			</div>
+	</div>
+	<div class="row" id="drms">
+		<div class="content">
+			<h2>Time since last Dragon Response Mission</h2>
+			<h4>(Don"t worry, they"re a joke anyway.)</h4>
+			<div class="Timer"></div>
 		</div>
-		<div class="row" id="raid-tournament">
-			<div class="content">
-				<h2>Time since last Raid Tournament</h2>
-				<h4>(Ready Check Cup)</h4>
-				<div class="Timer"></div>
-			</div>
+	</div>
+	<div class="row" id="pvp-tournament">
+		<div class="content">
+			<h2>Time since last PvP Tournament</h2>
+			<h4>(Masters of the Arena II)</h4>
+			<div class="Timer"></div>
 		</div>
-		<!--<div class="row" id="mysticbuilds">
+	</div>
+	<div class="row" id="raid-tournament">
+		<div class="content">
+			<h2>Time since last Raid Tournament</h2>
+			<h4>(Ready Check Cup)</h4>
+			<div class="Timer"></div>
+		</div>
+	</div>
+	<!--<div class="row" id="mysticbuilds">
 			<div class="content">
 				<h2>Time since last Mystic Builds</h2>
 				<div class="Timer"></div>
 			</div>
 		</div>-->
-		<div class="row" id="doppelganger">
-			<div class="content">
-				<h2>Time since Doppelganger got bugged</h2>
-				<h4>(Mike needs help)</h4>
-				<div class="Timer"></div>
-			</div>
+	<div class="row" id="doppelganger">
+		<div class="content">
+			<h2>Time since Doppelganger got bugged</h2>
+			<h4>(Mike needs help)</h4>
+			<div class="Timer"></div>
 		</div>
-		<div class="row" id="fish">
-			<div class="content">
-				<h2>Time since new fishes were added</h2>
-				<h4>(Six Fish Per Year)</h4>
-				<div class="Timer"></div>
-			</div>
+	</div>
+	<div class="row" id="fish">
+		<div class="content">
+			<h2>Time since new fishes were added</h2>
+			<h4>(Six Fish Per Year)</h4>
+			<div class="Timer"></div>
 		</div>
-	</body>
-	<script>
-		var timers = document.getElementsByClassName("Timer");
-		for (var i = 0; i < timers.length; i++) {
-			switch ((timers[i].parentElement).parentElement.id) {
-				case "fractals": 	 			startCD(timers[i], new Date("jun 27, 2023 18:00:00").getTime()); break;
-				case "raids": 	 	 			startCD(timers[i], new Date("jun 11, 2019 18:00:00").getTime()); break;
-				case "balance-patch": 	 		startCD(timers[i], new Date("jun 27, 2023 18:00:00").getTime()); break;
-				case "strikes": 	 			startCD(timers[i], new Date("nov 29, 2022 18:00:00").getTime()); break;
-				case "alliances": 	 			startCD(timers[i], new Date("feb 1, 2018 18:00:00").getTime()); break;
-				case "dungeons": 	 			startCD(timers[i], new Date("jun 25, 2013 18:00:00").getTime()); break;
-				case "drms": 		 			startCD(timers[i], new Date("mar 9, 2021 18:00:00").getTime()); break;
-				//case "mysticbuilds": 			startCD(timers[i], new Date("jan 29, 2022 18:00:00").getTime()); break;
-				case "pvp-tournament": 		 	startCD(timers[i], new Date("jul 29, 2022 18:00:00").getTime()); break;
-				case "raid-tournament":			startCD(timers[i], new Date("apr 29, 2023 18:00:00").getTime()); break;
-				case "doppelganger":			startCD(timers[i], new Date("may 11, 2021 18:00:00").getTime()); break;
-				case "fractal-leaderboards":	startCD(timers[i], new Date("jul 30, 2015 18:00:00").getTime()); break;
-				case "fish":					startCD(timers[i], new Date("feb 22, 2022 18:00:00").getTime()); break;
+	</div>
+</body>
+<script>
+	var timers = document.getElementsByClassName("Timer");
+	for (var i = 0; i < timers.length; i++) {
+		switch ((timers[i].parentElement).parentElement.id) {
+			case "fractals": startCD(timers[i], new Date("jun 27, 2023 18:00:00").getTime()); break;
+			case "raids": startCD(timers[i], new Date("jun 11, 2019 18:00:00").getTime()); break;
+			case "balance-patch": startCD(timers[i], new Date("jun 27, 2023 18:00:00").getTime()); break;
+			case "strikes": startCD(timers[i], new Date("nov 29, 2022 18:00:00").getTime()); break;
+			case "alliances": startCD(timers[i], new Date("feb 1, 2018 18:00:00").getTime()); break;
+			case "dungeons": startCD(timers[i], new Date("jun 25, 2013 18:00:00").getTime()); break;
+			case "drms": startCD(timers[i], new Date("mar 9, 2021 18:00:00").getTime()); break;
+			//case "mysticbuilds": 			startCD(timers[i], new Date("jan 29, 2022 18:00:00").getTime()); break;
+			case "pvp-tournament": startCD(timers[i], new Date("jul 29, 2022 18:00:00").getTime()); break;
+			case "raid-tournament": startCD(timers[i], new Date("apr 29, 2023 18:00:00").getTime()); break;
+			case "doppelganger": startCD(timers[i], new Date("may 11, 2021 18:00:00").getTime()); break;
+			case "fractal-leaderboards": startCD(timers[i], new Date("jul 30, 2015 18:00:00").getTime()); break;
+			case "fish": startCD(timers[i], new Date("feb 22, 2022 18:00:00").getTime()); break;
+		}
+	}
+
+	function startCD(timerElement, releaseDate) {
+		var dayNode = document.createElement("div");
+		dayNode.setAttribute("id", "day");
+		var hourNode = document.createElement("div");
+		hourNode.setAttribute("id", "hour");
+		var minuteNode = document.createElement("div");
+		minuteNode.setAttribute("id", "minute");
+		var secondNode = document.createElement("div");
+		secondNode.setAttribute("id", "second");
+
+		//console.log(timerElement);
+
+		timerElement.appendChild(dayNode);
+		timerElement.appendChild(hourNode);
+		timerElement.appendChild(minuteNode);
+		timerElement.appendChild(secondNode);
+
+		setInterval(function () {
+			var now = new Date().getTime();
+			var diff = now - releaseDate;
+
+			var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+			dayNode.innerHTML = days;
+			hourNode.innerHTML = hours;
+			minuteNode.innerHTML = minutes;
+			secondNode.innerHTML = seconds;
+		}, 1000);
+	}
+
+	var newOrder = [];
+
+	window.onload = (event) => {
+		setTimeout(() => {
+			var body = Array.from(document.body.children);
+			body.forEach(element => {
+				if (element.classList.contains("row")) {
+					//console.log(element);
+					var timerObj = element.children[0].getElementsByClassName("Timer")[0];
+					console.log(timerObj.children[0].innerHTML);
+					newOrder.push({ day: parseInt(timerObj.children[0].innerHTML), html: element });
+				}
+			});
+
+			console.log(newOrder);
+
+			newOrder.sort((a, b) => a.day - b.day);
+			console.log(newOrder);
+
+			body.innerHTML = "";
+			newOrder.forEach(element => {
+				document.body.appendChild(element.html);
+			});
+		}, 1000);
+	};
+</script>
+<script>
+	function renderTimeline() {
+		var options = {
+			series: [
+				// Eras
+				{
+					name: "Guild Wars 2",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2012-08-28").getTime(),
+								new Date("2013-01-28").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Scarlet's War (Season 1)",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2013-01-28").getTime(),
+								new Date("2014-07-01").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Glint's Prophecy (Season 2)",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2014-07-01").getTime(),
+								new Date("2015-10-23").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Heart of Thorns",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2015-10-23").getTime(),
+								new Date("2016-07-26").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Glint's Legacy (Season 3)",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2016-07-26").getTime(),
+								new Date("2017-09-22").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Path of Fire",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2017-09-22").getTime(),
+								new Date("2017-11-28").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Rise of Kralkatorrik (Season 4)",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2017-11-28").getTime(),
+								new Date("2019-09-17").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "The Icebrood Saga (Season 5)",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2019-09-17").getTime(),
+								new Date("2022-02-28").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "End of Dragons",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2022-02-28").getTime(),
+								new Date("2023-08-22").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Secrets of the Obscure",
+					data: [
+						{
+							x: "Era",
+							y: [
+								new Date("2023-08-22").getTime(),
+								Date.now(),
+							]
+						}
+					]
+				},
+
+				// Dungeons
+				{
+					name: "Ascalonian Catacombs",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-08-28").getTime(),
+								new Date("2012-08-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Caudecus's Manor",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-08-28").getTime(),
+								new Date("2012-08-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Twilight Arbor",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-08-28").getTime(),
+								new Date("2012-08-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Sorrow's Embrace",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-08-28").getTime(),
+								new Date("2012-08-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Citadel of Flame",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-08-28").getTime(),
+								new Date("2012-08-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Honor of the Waves",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-08-28").getTime(),
+								new Date("2012-08-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Crucible of Eternity",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-08-28").getTime(),
+								new Date("2012-08-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "The Ruined City of Arah",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-08-28").getTime(),
+								new Date("2012-08-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Ascent to Madness",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-10-28").getTime(),
+								new Date("2012-10-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Tixx's Infinirarium",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2012-12-15").getTime(),
+								new Date("2012-12-16").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Molten Facility",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2013-04-30").getTime(),
+								new Date("2013-05-01").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Canach's Lair",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2013-05-28").getTime(),
+								new Date("2013-05-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Aetherblade Retreat",
+					data: [
+						{
+							x: "Dungeons",
+							y: [
+								new Date("2013-06-25").getTime(),
+								new Date("2013-06-26").getTime()
+							]
+						}
+					]
+				},
+
+				// Fractals
+				{
+					name: "Initial Release with 9 Fractals",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2012-11-15").getTime(),
+								new Date("2012-11-16").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Second Release with 5 Fractals",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2013-11-26").getTime(),
+								new Date("2013-11-27").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Chaos",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2016-07-26").getTime(),
+								new Date("2016-07-27").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Nightmare",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2016-11-21").getTime(),
+								new Date("2016-11-22").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Shattered Observatory",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2017-07-25").getTime(),
+								new Date("2017-07-26").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Twilight Oasis",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2017-11-28").getTime(),
+								new Date("2017-11-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Deepstone",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2018-06-26").getTime(),
+								new Date("2018-06-27").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Siren's Reef",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2019-01-08").getTime(),
+								new Date("2019-01-09").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Sunqua Peak",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2020-09-15").getTime(),
+								new Date("2020-09-16").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Silent Surf",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2023-06-27").getTime(),
+								new Date("2023-06-28").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Silent Surf CM",
+					data: [
+						{
+							x: "Fractals",
+							y: [
+								new Date("2023-07-18").getTime(),
+								new Date("2023-07-19").getTime()
+							]
+						}
+					]
+				},
+
+				// Raids
+				{
+					name: "Spirit Vale",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2015-11-17").getTime(),
+								new Date("2015-11-18").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Salvation Pass",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2016-03-08").getTime(),
+								new Date("2016-03-09").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Stronghold of the Faithful",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2016-06-14").getTime(),
+								new Date("2016-06-15").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Bastion of the Penitent",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2017-02-08").getTime(),
+								new Date("2017-02-09").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Hall of Chains",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2017-11-28").getTime(),
+								new Date("2017-11-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Mythwright Gambit",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2018-09-18").getTime(),
+								new Date("2018-09-19").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "The Key of Ahdashim",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2019-06-11").getTime(),
+								new Date("2019-06-12").getTime()
+							]
+						}
+					]
+				},
+
+				// Strikes
+				{
+					name: "Secret Lair of the Snowmen",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2018-12-11").getTime(),
+								new Date("2018-12-12").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Shiverpeaks Pass",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2019-09-17").getTime(),
+								new Date("2019-09-18").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Voice of the Fallen and Claw of the Fallen",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2019-11-19").getTime(),
+								new Date("2019-11-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Fraenir of Jormag",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2019-11-19").getTime(),
+								new Date("2019-11-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Voice of the Fallen and Claw of the Fallen",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2019-11-19").getTime(),
+								new Date("2019-11-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Boneskinner",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2019-11-19").getTime(),
+								new Date("2019-11-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Whiper of Jormag",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2020-01-28").getTime(),
+								new Date("2020-01-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Forging Steel",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2020-03-17").getTime(),
+								new Date("2020-03-18").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Cold War",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2020-05-26").getTime(),
+								new Date("2020-05-27").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Aetherblade Hideout",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-02-28").getTime(),
+								new Date("2022-02-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Aetherblade Hideout CM",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-04-19").getTime(),
+								new Date("2022-04-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Xunlai Jade Junkyard",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-02-28").getTime(),
+								new Date("2022-02-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Xunlai Jade Junkyard CM",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-05-10").getTime(),
+								new Date("2022-05-11").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Kaineng Overlook",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-02-28").getTime(),
+								new Date("2022-02-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Kaineng Overlook CM",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-05-24").getTime(),
+								new Date("2022-05-25").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Harvest Temple",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-02-28").getTime(),
+								new Date("2022-02-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Harvest Temple CM",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-06-28").getTime(),
+								new Date("2022-06-29").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Old Lion's Court",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-11-08").getTime(),
+								new Date("2022-11-09").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Old Lion's Court CM",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2022-11-29").getTime(),
+								new Date("2022-11-30").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Cosmic Observatory",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2023-08-22").getTime(),
+								new Date("2023-08-23").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "The Temple of Febe",
+					data: [
+						{
+							x: "Strikes",
+							y: [
+								new Date("2023-08-22").getTime(),
+								new Date("2023-08-23").getTime()
+							]
+						}
+					]
+				},
+
+				// Dragon Response Missions
+				{
+					name: "Metrica Province",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2020-11-17").getTime(),
+								new Date("2020-11-18").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Brisban Wildlands",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2020-11-17").getTime(),
+								new Date("2020-11-18").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Gendarran Fields",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2020-11-17").getTime(),
+								new Date("2020-11-18").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Fields of Ruin",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2021-01-19").getTime(),
+								new Date("2021-01-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Thunderhead Peaks",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2021-01-19").getTime(),
+								new Date("2021-01-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Lake Doric",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2021-01-19").getTime(),
+								new Date("2021-01-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Snowden Drifts",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2021-01-19").getTime(),
+								new Date("2021-01-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Caledon Forest",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2021-03-09").getTime(),
+								new Date("2021-03-10").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Bloodtide Coast",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2021-03-09").getTime(),
+								new Date("2021-03-10").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Fireheart Rise",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2021-03-09").getTime(),
+								new Date("2021-03-10").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Dragonstorm",
+					data: [
+						{
+							x: "DRMs",
+							y: [
+								new Date("2021-04-27").getTime(),
+								new Date("2021-04-28").getTime()
+							]
+						}
+					]
+				}
+			],
+			chart: {
+				height: 420,
+				type: "rangeBar",
+				foreColor: "#FFFFFF",
+				background: "#44444488",
+				dropShadow: {
+					enabled: true,
+					enabledOnSeries: undefined,
+					top: 0,
+					left: 0,
+					blur: 0,
+					color: '#000',
+					opacity: 0.35
+				}
+			},
+			plotOptions: {
+				bar: {
+					horizontal: true,
+					isDumbbell: true,
+					barHeight: "50%",
+				}
+			},
+			xaxis: {
+				type: "datetime",
+				min: new Date("2012-08-28").getTime()
+			},
+			title: {
+				text: "Content Releases"
+			},
+			legend: {
+				show: false
+			},
+			stroke: {
+				show: true,
+				curve: 'smooth',
+				lineCap: 'butt',
+				colors: undefined,
+				width: 3,
+				dashArray: 0,
 			}
-		}
-		
-		function startCD(timerElement, releaseDate) {
-			var dayNode = document.createElement("div");
-			dayNode.setAttribute("id", "day");
-			var hourNode = document.createElement("div");
-			hourNode.setAttribute("id", "hour");
-			var minuteNode = document.createElement("div");
-			minuteNode.setAttribute("id", "minute");
-			var secondNode = document.createElement("div");
-			secondNode.setAttribute("id", "second");
-			
-			//console.log(timerElement);
-			
-			timerElement.appendChild(dayNode);
-			timerElement.appendChild(hourNode);
-			timerElement.appendChild(minuteNode);
-			timerElement.appendChild(secondNode);
-			
-			setInterval(function() {
-				var now = new Date().getTime();
-				var diff = now - releaseDate;
-				
-				var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-				var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-				var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-				var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-				
-				dayNode.innerHTML = days;
-				hourNode.innerHTML = hours;
-				minuteNode.innerHTML = minutes;
-				secondNode.innerHTML = seconds;
-			}, 1000);
-		}
-		
-		var newOrder = [];
-		
-		window.onload = (event) => {
-			setTimeout(() => {
-				var body = Array.from(document.body.children);
-				body.forEach(element => {
-					if (element.classList.contains("row")) {
-						//console.log(element);
-						var timerObj = element.children[0].getElementsByClassName("Timer")[0];
-						console.log(timerObj.children[0].innerHTML);
-						newOrder.push( { day: parseInt(timerObj.children[0].innerHTML), html: element } );
-					}
-				});
-				
-				console.log(newOrder);
-				
-				newOrder.sort((a,b) => a.day - b.day);
-				console.log(newOrder);
-				
-				body.innerHTML = "";
-				newOrder.forEach(element => {
-					document.body.appendChild(element.html);
-				});
-			}, 1000);
 		};
-	</script>
+
+		var chart = new ApexCharts(document.querySelector("#timeline"), options);
+		chart.render();
+	}
+
+	window.onload = (event) => {
+		renderTimeline();
+	};
+</script>
+
 </html>
