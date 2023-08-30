@@ -17,7 +17,7 @@
 	body {
 		font-family: "Cronos Pro";
 		color: #FFFFFF;
-		text-shadow: 0 0 2px #000000, 0 0 2px #000000, 0 0 2px #000000;
+		text-shadow: 0 0 2px #000000, 0 0 2px #000000, 0 0 2px #000000, 7px 7px 10px black;
 		margin: 0;
 		height: 100%;
 	}
@@ -163,98 +163,162 @@
 		content: "Seconds";
 	}
 
+	#schedule {
+		background-image: url("img/schedule.png");
+	}
+
 	#timeline {
-		padding: 50px;
+		margin: 50px;
 		backdrop-filter: blur(10px);
+	}
+
+	#content-drops-wrapper {
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	.content-drop {
+		width: 33%;
+		margin: 16px;
+	}
+
+	.content-drop > ul > li {
+		display: block;
+	}
+
+	.content-drop .Timer > div {
+		font-size: 2rem !important;
+	}
+
+	.content-drop .Timer > div::before {
+		font-size: 1rem !important;
 	}
 </style>
 
 <body>
-	<div class="big-row" id="fractals">
-		<div id="timeline"></div>
-		<br />
-		<div style="filter: drop-shadow(0 0 5px black);">
-			8 Dungeons.
-			<br />
-			22 Fractals.
-			<br />
-			7 Raids with 21 Bosses and 8 events.
-			<br />
-			13 Strike missions, 7 of which with CMs and 2 Joke missions (FS, CW).
-			<br />
-			10 Dragon Response Missions and 1 Instanced World Boss.
+	<div class="big-row" id="schedule">
+		<div id="content-drops-wrapper">
+			<div class="content-drop">
+				<h1>Quarter 1</h1>
+				<h2>November 7, 2023</h2>
+				<span id="q1-countdown"><span><h3 class="Timer"></h3></span></span>
+				<ul>
+					<li>Story Continues</li>
+					<li>New Map</li>
+					<li>Cosmic Observatory CM</li>
+					<li>-</li>
+					<li>New Mastery Line</li>
+					<li>New Armor Set</li>
+					<li>New Relics</li>
+					<li>Rift Convergences</li>
+				</ul>
+			</div>
+			<div class="content-drop">
+				<h1>Quarter 2</h1>
+				<h2>February 7, 2024</h2>
+				<span id="q2-countdown"><span><h3 class="Timer"></h3></span></span>
+				<ul>
+					<li>Story Continues</li>
+					<li>Map Extended</li>
+					<li>Temple of Febe CM</li>
+					<li>New Weapon for all Professions</li>
+					<li>Additional Masteries</li>
+					<li>Legendary Armor Tier 1</li>
+					<li>Legendary Relics</li>
+					<li>New Rift Enemies</li>
+				</ul>
+			</div>
+			<div class="content-drop">
+				<h1>Quarter 3</h1>
+				<h2>May 7, 2024</h2>
+				<span id="q3-countdown"><span><h3 class="Timer"></h3></span></span>
+				<ul>
+					<li>Story Concludes</li>
+					<li>Map Extended</li>
+					<li>Fractal with CM</li>
+					<li>-</li>
+					<li>Additional Masteries</li>
+					<li>Legendary Armor Tier 2</li>
+					<li>New Relics</li>
+					<li>New Rift Enemies</li>
+				</ul>
+			</div>
 		</div>
-		<br />
+		<hr width="80%">
+		<div id="timeline"></div>
 	</div>
 	<div class="row" id="fractals">
 		<div class="content">
 			<h2>Time since last Fractal</h2>
-			<h4>(Silent Surf)</h4>
+			<h4>Silent Surf CM (technically a strike)</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
 	<div class="row" id="raids">
 		<div class="content">
 			<h2>Time since last Raid</h2>
-			<h4>(The Key of Ahdashim)</h4>
+			<h4>The Key of Ahdashim</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
 	<div class="row" id="balance-patch">
 		<div class="content">
 			<h2>Time since last Balance Patch</h2>
-			<h4>(Constantly hydrated.)</h4>
+			<h4>Constantly hydrated.</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
 	<div class="row" id="strikes">
 		<div class="content">
 			<h2>Time since Last Strike Mission</h2>
-			<h4>(Old Lion's Court CM)</h4>
+			<h4>Secrets of the Obscure</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
 	<div class="row" id="alliances">
 		<div class="content">
 			<h2>Time since Alliances were announced</h2>
+			<h4>Cornerstone of the Game</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
 	<div class="row" id="fractal-leaderboards">
 		<div class="content">
 			<h2>Time since Fractal Leaderboards were announced</h2>
-			<h4>(Don't mention this to Nike)</h4>
+			<h4>Don't mention this to Nike</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
 	<div class="row" id="dungeons">
 		<div class="content">
 			<h2>Time since last Dungeon</h2>
-			<h4>(Aetherblade Retreat)</h4>
+			<h4>Aetherblade Retreat</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
-	<div class="row" id="drms">
+	<!--<div class="row" id="drms">
 		<div class="content">
 			<h2>Time since last Dragon Response Mission</h2>
 			<h4>(Don't worry, they're a joke anyway.)</h4>
 			<div class="Timer"></div>
 		</div>
-	</div>
-	<div class="row" id="pvp-tournament">
+	</div>-->
+	<!--<div class="row" id="pvp-tournament">
 		<div class="content">
 			<h2>Time since last PvP Tournament</h2>
 			<h4>(Masters of the Arena II)</h4>
 			<div class="Timer"></div>
 		</div>
-	</div>
-	<div class="row" id="raid-tournament">
+	</div>-->
+	<!--<div class="row" id="raid-tournament">
 		<div class="content">
 			<h2>Time since last Raid Tournament</h2>
 			<h4>(Ready Check Cup)</h4>
 			<div class="Timer"></div>
 		</div>
-	</div>
+	</div>-->
 	<!--<div class="row" id="mysticbuilds">
 			<div class="content">
 				<h2>Time since last Mystic Builds</h2>
@@ -264,14 +328,14 @@
 	<div class="row" id="doppelganger">
 		<div class="content">
 			<h2>Time since Doppelganger got bugged</h2>
-			<h4>(Mike needs help)</h4>
+			<h4>Mike needs help</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
 	<div class="row" id="fish">
 		<div class="content">
 			<h2>Time since new fishes were added</h2>
-			<h4>(Six Fish Per Year)</h4>
+			<h4>Secrets of the Obscure</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
@@ -280,10 +344,10 @@
 	var timers = document.getElementsByClassName("Timer");
 	for (var i = 0; i < timers.length; i++) {
 		switch ((timers[i].parentElement).parentElement.id) {
-			case "fractals": startCD(timers[i], new Date("jun 27, 2023 18:00:00").getTime()); break;
+			case "fractals": startCD(timers[i], new Date("jul 18, 2023 18:00:00").getTime()); break;
 			case "raids": startCD(timers[i], new Date("jun 11, 2019 18:00:00").getTime()); break;
 			case "balance-patch": startCD(timers[i], new Date("jun 27, 2023 18:00:00").getTime()); break;
-			case "strikes": startCD(timers[i], new Date("nov 29, 2022 18:00:00").getTime()); break;
+			case "strikes": startCD(timers[i], new Date("aug 22, 2023 18:00:00").getTime()); break;
 			case "alliances": startCD(timers[i], new Date("feb 1, 2018 18:00:00").getTime()); break;
 			case "dungeons": startCD(timers[i], new Date("jun 25, 2013 18:00:00").getTime()); break;
 			case "drms": startCD(timers[i], new Date("mar 9, 2021 18:00:00").getTime()); break;
@@ -292,7 +356,10 @@
 			case "raid-tournament": startCD(timers[i], new Date("apr 29, 2023 18:00:00").getTime()); break;
 			case "doppelganger": startCD(timers[i], new Date("may 11, 2021 18:00:00").getTime()); break;
 			case "fractal-leaderboards": startCD(timers[i], new Date("jul 30, 2015 18:00:00").getTime()); break;
-			case "fish": startCD(timers[i], new Date("feb 22, 2022 18:00:00").getTime()); break;
+			case "fish": startCD(timers[i], new Date("aug 22, 2023 18:00:00").getTime()); break;
+			case "q1-countdown": startCD(timers[i], new Date("nov 7, 2023 18:00:00").getTime()); break;
+			case "q2-countdown": startCD(timers[i], new Date("feb 7, 2024 18:00:00").getTime()); break;
+			case "q3-countdown": startCD(timers[i], new Date("may 7, 2024 18:00:00").getTime()); break;
 		}
 	}
 
@@ -315,7 +382,15 @@
 
 		setInterval(function () {
 			var now = new Date().getTime();
-			var diff = now - releaseDate;
+			var diff;
+			var countdown = false;
+
+			if (now > releaseDate) {
+				diff = now - releaseDate
+			} else {
+				diff = releaseDate - now;
+				countdown = true;
+			}
 
 			var days = Math.floor(diff / (1000 * 60 * 60 * 24));
 			var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -326,6 +401,12 @@
 			hourNode.innerHTML = hours;
 			minuteNode.innerHTML = minutes;
 			secondNode.innerHTML = seconds;
+
+			if (days > 7) {
+				hourNode.style.display = "none";
+				minuteNode.style.display = "none";
+				secondNode.style.display = "none";
+			}
 		}, 1000);
 	}
 
