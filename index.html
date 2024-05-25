@@ -121,6 +121,10 @@
 	#expansion5 {
 		background-image: url("img/expansion5.jpg");
 	}
+	
+	#expansion5reveal {
+		background-image: url("img/expansion5.jpg");
+	}
 
 	.Timer {
 		background: rgba(0, 0, 0, 0.1);
@@ -245,7 +249,7 @@
 			<div class="content-drop">
 				<h1>Update 3</h1>
 				<h2>May 21, 2024</h2>
-				<span id="q3-countdown"><span><h3 class="Timer"></h3></span></span>
+				<!--<span id="q3-countdown"><span>--><h3 class="Timer">Released</h3><!--</span></span>-->
 				<ul>
 					<li>Story Concludes</li>
 					<li>Map Extended</li>
@@ -263,6 +267,13 @@
 	</div>
 	
 	<div class="row" id="expansion5">
+		<div class="content">
+			<h2>Time until Expansion 5 launch</h2>
+			<h4>(estimated)</h4>
+			<div class="Timer"></div>
+		</div>
+	</div>
+	<div class="row" id="expansion5reveal">
 		<div class="content">
 			<h2>Time until Expansion 5 reveal</h2>
 			<h4>(estimated)</h4>
@@ -371,7 +382,8 @@
 	var timers = document.getElementsByClassName("Timer");
 	for (var i = 0; i < timers.length; i++) {
 		switch ((timers[i].parentElement).parentElement.id) {
-			case "expansion5": startCD(timers[i], new Date("june 25, 2024 18:00:00").getTime()); break;
+			case "expansion5": startCD(timers[i], new Date("aug 20, 2024 18:00:00").getTime()); break;
+			case "expansion5reveal": startCD(timers[i], new Date("june 25, 2024 18:00:00").getTime()); break;
 			case "gw3": startCD(timers[i], new Date("mar 28, 2024 10:00:00").getTime()); break;
 			case "fractals": startCD(timers[i], new Date("jul 18, 2023 18:00:00").getTime()); break;
 			case "raids": startCD(timers[i], new Date("jun 11, 2019 18:00:00").getTime()); break;
