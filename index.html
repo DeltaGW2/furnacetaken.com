@@ -214,47 +214,50 @@
 		<div id="content-drops-wrapper">
 			<div class="content-drop">
 				<h1>Update 1</h1>
-				<h2>November 7, 2023</h2>
-				<!--<span id="q1"><span>--><h3 class="Timer">Released</h3><!--</span></span>-->
+				<h2>November 19, 2024</h2>
+				<span id="q1-countdown"><span><h3 class="Timer"></h3></span></span>
 				<ul>
 					<li>Story Continues</li>
-					<li>New Map</li>
-					<li>Cosmic Observatory CM</li>
 					<li>-</li>
-					<li>New Mastery Line</li>
-					<li>New Armor Set</li>
-					<li>New Relics</li>
-					<li>Rift Convergences</li>
+					<li>Raid Wing</li>
+					<li>Convergence</li>
+					<li>New Homestead Decorations</li>
+					<li>6 New Relics</li>
+					<li>Mastery Updates</li>
+					<li>Legendary Spear</li>
+					<li>New Weapon Set</li>
 				</ul>
 			</div>
 			<div class="content-drop">
 				<h1>Update 2</h1>
-				<h2>February 27, 2024</h2>
-				<!--<span id="q2-countdown"><span>--><h3 class="Timer">Released</h3><!--</span></span>-->
+				<h2>February 25, 2025</h2>
+				<span id="q2-countdown"><span><h3 class="Timer"></h3></span></span>
 				<ul>
 					<li>Story Continues</li>
-					<li>Map Extended</li>
-					<li>Temple of Febe CM</li>
-					<li>New Weapon for all Professions</li>
-					<li>Additional Masteries</li>
-					<li>Legendary Armor Tier 1</li>
-					<li>Legendary Relics</li>
-					<li>New Legendary Rift Enemies</li>
+					<li>Map 3</li>
+					<li>Raid CMs</li>
+					<li>Raid LCMs</li>
+					<li>New Homestead Decorations</li>
+					<li>6 New Relics</li>
+					<li>Mastery Updates</li>
+					<li>New Armor Set</li>
+					<li>New Weapon Set</li>
 				</ul>
 			</div>
 			<div class="content-drop">
 				<h1>Update 3</h1>
-				<h2>May 21, 2024</h2>
-				<!--<span id="q3-countdown"><span>--><h3 class="Timer">Released</h3><!--</span></span>-->
+				<h2>May 20, 2025</h2>
+				<span id="q3-countdown"><span><h3 class="Timer"></h3></span></span>
 				<ul>
 					<li>Story Concludes</li>
-					<li>Map Extended</li>
-					<li>Fractal CM</li>
-					<li>-</li>
-					<li>Additional Masteries</li>
-					<li>Legendary Armor Tier 2</li>
-					<li>New Relics</li>
-					<li>New Legendary Rift Enemies</li>
+					<li>Map 4</li>
+					<li>Fractal with CM</li>
+					<li>Convergence CM</li>
+					<li>New Homestead Decorations</li>
+					<li>6 New Relics</li>
+					<li>Mastery Updates</li>
+					<li>Legendary Backpack</li>
+					<li>New Weapon Set</li>
 				</ul>
 			</div>
 		</div>
@@ -262,12 +265,6 @@
 		<div id="timeline"></div>
 	</div>
 	
-	<div class="row" id="expansion5">
-		<div class="content">
-			<h2>Time until Janthir Wilds launch</h2>
-			<div class="Timer"></div>
-		</div>
-	</div>
 	<div class="row" id="fractals">
 		<div class="content">
 			<h2>Time since last Fractal</h2>
@@ -343,7 +340,7 @@
 				<h2>Time since last Mystic Builds</h2>
 				<div class="Timer"></div>
 			</div>
-		</div>-->
+		</div>
 	<div class="row" id="doppelganger">
 		<div class="content">
 			<h2>Time since Doppelganger got bugged</h2>
@@ -357,18 +354,16 @@
 			<h4>Secrets of the Obscure</h4>
 			<div class="Timer"></div>
 		</div>
-	</div>
+	</div>-->
 </body>
 <script>
 	var timers = document.getElementsByClassName("Timer");
 	for (var i = 0; i < timers.length; i++) {
 		switch ((timers[i].parentElement).parentElement.id) {
-			case "expansion5": startCD(timers[i], new Date("aug 20, 2024 18:00:00").getTime()); break;
-			case "expansion5reveal": startCD(timers[i], new Date("june 25, 2024 18:00:00").getTime()); break;
 			case "gw3": startCD(timers[i], new Date("mar 28, 2024 10:00:00").getTime()); break;
 			case "fractals": startCD(timers[i], new Date("jun 04, 2024 18:00:00").getTime()); break;
 			case "raids": startCD(timers[i], new Date("jun 11, 2019 18:00:00").getTime()); break;
-			case "balance-patch": startCD(timers[i], new Date("mar 19, 2024 18:00:00").getTime()); break;
+			case "balance-patch": startCD(timers[i], new Date("oct 8, 2024 18:00:00").getTime()); break;
 			case "strikes": startCD(timers[i], new Date("feb 27, 2024 18:00:00").getTime()); break;
 			case "alliances": startCD(timers[i], new Date("feb 1, 2018 18:00:00").getTime()); break;
 			case "dungeons": startCD(timers[i], new Date("jun 25, 2013 18:00:00").getTime()); break;
@@ -378,10 +373,10 @@
 			case "raid-tournament": startCD(timers[i], new Date("apr 29, 2023 18:00:00").getTime()); break;
 			case "doppelganger": startCD(timers[i], new Date("may 11, 2021 18:00:00").getTime()); break;
 			case "fractal-leaderboards": startCD(timers[i], new Date("jul 30, 2015 18:00:00").getTime()); break;
-			case "fish": startCD(timers[i], new Date("feb 27, 2024 18:00:00").getTime()); break;
-			case "q1-countdown": startCD(timers[i], new Date("nov 7, 2023 18:00:00").getTime()); break;
-			case "q2-countdown": startCD(timers[i], new Date("feb 27, 2024 18:00:00").getTime()); break;
-			case "q3-countdown": startCD(timers[i], new Date("may 21, 2024 18:00:00").getTime()); break;
+			case "fish": startCD(timers[i], new Date("aug 20, 2024 18:00:00").getTime()); break;
+			case "q1-countdown": startCD(timers[i], new Date("nov 19, 2024 18:00:00").getTime()); break;
+			case "q2-countdown": startCD(timers[i], new Date("feb 25, 2025 18:00:00").getTime()); break;
+			case "q3-countdown": startCD(timers[i], new Date("may 20, 2025 18:00:00").getTime()); break;
 		}
 	}
 
