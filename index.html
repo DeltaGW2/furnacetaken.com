@@ -215,7 +215,7 @@
 			<div class="content-drop">
 				<h1>Update 1</h1>
 				<h2>November 19, 2024</h2>
-				<span id="q1-countdown"><span><h3 class="Timer"></h3></span></span>
+				<!--<span id="q1-countdown"><span>--><h3 class="Timer">Released</h3><!--</span></span>-->
 				<ul>
 					<li>Story Continues</li>
 					<li>-</li>
@@ -275,7 +275,7 @@
 	<div class="row" id="raids">
 		<div class="content">
 			<h2>Time since last Raid</h2>
-			<h4>The Key of Ahdashim</h4>
+			<h4>Mount Balrior</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
@@ -362,7 +362,7 @@
 		switch ((timers[i].parentElement).parentElement.id) {
 			case "gw3": startCD(timers[i], new Date("mar 28, 2024 10:00:00").getTime()); break;
 			case "fractals": startCD(timers[i], new Date("jun 04, 2024 18:00:00").getTime()); break;
-			case "raids": startCD(timers[i], new Date("jun 11, 2019 18:00:00").getTime()); break;
+			case "raids": startCD(timers[i], new Date("nov 19, 2024 18:00:00").getTime()); break;
 			case "balance-patch": startCD(timers[i], new Date("oct 8, 2024 18:00:00").getTime()); break;
 			case "strikes": startCD(timers[i], new Date("feb 27, 2024 18:00:00").getTime()); break;
 			case "alliances": startCD(timers[i], new Date("feb 1, 2018 18:00:00").getTime()); break;
@@ -999,6 +999,18 @@
 							y: [
 								new Date("2019-06-11").getTime(),
 								new Date("2019-06-12").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Mount Balrior",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2024-11-19").getTime(),
+								new Date("2024-11-20").getTime()
 							]
 						}
 					]
