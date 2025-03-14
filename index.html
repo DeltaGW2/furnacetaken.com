@@ -231,7 +231,7 @@
 			<div class="content-drop">
 				<h1>Update 2</h1>
 				<h2>February 25, 2025</h2>
-				<span id="q2-countdown"><span><h3 class="Timer"></h3></span></span>
+				<!--<span id="q2-countdown"><span>--><h3 class="Timer">Released</h3><!--</span></span>-->
 				<ul>
 					<li>Story Continues</li>
 					<li>Map 3</li>
@@ -275,7 +275,7 @@
 	<div class="row" id="raids">
 		<div class="content">
 			<h2>Time since last Raid</h2>
-			<h4>Mount Balrior</h4>
+			<h4>Mount Balrior (CM)</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
@@ -362,7 +362,7 @@
 		switch ((timers[i].parentElement).parentElement.id) {
 			case "gw3": startCD(timers[i], new Date("mar 28, 2024 10:00:00").getTime()); break;
 			case "fractals": startCD(timers[i], new Date("jun 04, 2024 18:00:00").getTime()); break;
-			case "raids": startCD(timers[i], new Date("nov 19, 2024 18:00:00").getTime()); break;
+			case "raids": startCD(timers[i], new Date("mar 11, 2025 18:00:00").getTime()); break;
 			case "balance-patch": startCD(timers[i], new Date("oct 8, 2024 18:00:00").getTime()); break;
 			case "strikes": startCD(timers[i], new Date("feb 27, 2024 18:00:00").getTime()); break;
 			case "alliances": startCD(timers[i], new Date("feb 1, 2018 18:00:00").getTime()); break;
@@ -375,7 +375,7 @@
 			case "fractal-leaderboards": startCD(timers[i], new Date("jul 30, 2015 18:00:00").getTime()); break;
 			case "fish": startCD(timers[i], new Date("aug 20, 2024 18:00:00").getTime()); break;
 			case "q1-countdown": startCD(timers[i], new Date("nov 19, 2024 18:00:00").getTime()); break;
-			case "q2-countdown": startCD(timers[i], new Date("feb 25, 2025 18:00:00").getTime()); break;
+			case "q2-countdown": startCD(timers[i], new Date("mar 11, 2025 18:00:00").getTime()); break;
 			case "q3-countdown": startCD(timers[i], new Date("may 20, 2025 18:00:00").getTime()); break;
 		}
 	}
@@ -1011,6 +1011,30 @@
 							y: [
 								new Date("2024-11-19").getTime(),
 								new Date("2024-11-20").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Mount Balrior (CMs)",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2025-03-11").getTime(),
+								new Date("2025-03-12").getTime()
+							]
+						}
+					]
+				},
+				{
+					name: "Mount Balrior (Ura LCM)",
+					data: [
+						{
+							x: "Raids",
+							y: [
+								new Date("2025-03-25").getTime(),
+								new Date("2025-03-26").getTime()
 							]
 						}
 					]
