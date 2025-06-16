@@ -45,6 +45,17 @@
 		font-size: 2em;
 	}
 
+	/* duplicate of row */
+	.row-sticky {
+		background-position: center;
+		background-size: cover;
+		display: flex;
+		flex-flow: column;
+		height: 33.33%;
+		text-align: center;
+		font-size: 2em;
+	}
+
 	.big-row {
 		background-position: center;
 		background-size: cover;
@@ -118,8 +129,8 @@
 		background-image: url("img/gw3.jpg");
 	}
 	
-	#expansion5 {
-		background-image: url("img/expansion5.jpg");
+	#expansion {
+		background-image: url("img/expansion.jpg");
 	}
 	
 	.Timer {
@@ -210,12 +221,19 @@
 </style>
 
 <body>
+	<div class="row-sticky" id="expansion">
+		<div class="content">
+			<h2>Time until expansion reveal</h2>
+			<h4>???</h4>
+			<div class="Timer"></div>
+		</div>
+	</div>
 	<div class="big-row" id="schedule">
-		<div id="content-drops-wrapper">
+		<!--<div id="content-drops-wrapper">
 			<div class="content-drop">
 				<h1>Update 1</h1>
 				<h2>November 19, 2024</h2>
-				<!--<span id="q1-countdown"><span>--><h3 class="Timer">Released</h3><!--</span></span>-->
+				<span id="q1-countdown"><span><h3 class="Timer">Released</h3></span></span>
 				<ul>
 					<li>Story Continues</li>
 					<li>-</li>
@@ -231,7 +249,7 @@
 			<div class="content-drop">
 				<h1>Update 2</h1>
 				<h2>March 11, 2025</h2>
-				<!--<span id="q2-countdown"><span>--><h3 class="Timer">Released</h3><!--</span></span>-->
+				<span id="q2-countdown"><span><h3 class="Timer">Released</h3></span></span>
 				<ul>
 					<li>Story Continues</li>
 					<li>Map 3</li>
@@ -247,7 +265,7 @@
 			<div class="content-drop">
 				<h1>Update 3</h1>
 				<h2>June 3, 2025</h2>
-				<!--<span id="q3-countdown"><span>--><h3 class="Timer">Released</h3><!--</span></span>-->
+				<span id="q3-countdown"><span><h3 class="Timer">Released</h3></span></span>
 				<ul>
 					<li>Story Concludes</li>
 					<li>Map 4</li>
@@ -260,7 +278,7 @@
 					<li>New Weapon Set</li>
 				</ul>
 			</div>
-		</div>
+		</div>-->
 		<hr width="80%">
 		<div id="timeline"></div>
 	</div>
@@ -367,6 +385,7 @@
 	var timers = document.getElementsByClassName("Timer");
 	for (var i = 0; i < timers.length; i++) {
 		switch ((timers[i].parentElement).parentElement.id) {
+			case "expansion": startCD(timers[i], new Date("jul 08, 2025 10:00:00").getTime()); break;
 			case "gw3": startCD(timers[i], new Date("mar 28, 2024 10:00:00").getTime()); break;
 			case "fractals": startCD(timers[i], new Date("jun 03, 2025 18:00:00").getTime()); break;
 			case "raids": startCD(timers[i], new Date("mar 11, 2025 18:00:00").getTime()); break;
@@ -426,7 +445,8 @@
 			minuteNode.innerHTML = minutes;
 			secondNode.innerHTML = seconds;
 
-			if (days > 7) {
+			/* FIX THIS LATER FOR SCHEDULE, right now this is for the expac countdown */
+			if (days > 7 && (timerElement.parentElement).parentElement.id != "expansion") {
 				hourNode.style.display = "none";
 				minuteNode.style.display = "none";
 				secondNode.style.display = "none";
@@ -602,7 +622,8 @@
 							x: "Era",
 							y: [
 								new Date("2024-08-20").getTime(),
-								Date.now(),
+								new Date("2025-10-28").getTime(),
+								//Date.now(),
 							],
 							strokeColor: '#3C79A0'
 						}
