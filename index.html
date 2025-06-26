@@ -228,8 +228,8 @@
 			<div class="Timer"></div>
 		</div>
 	</div>
-	<div class="big-row" id="schedule">
-		<!--<div id="content-drops-wrapper">
+	<!--<div class="big-row" id="schedule">
+		<div id="content-drops-wrapper">
 			<div class="content-drop">
 				<h1>Update 1</h1>
 				<h2>November 19, 2024</h2>
@@ -278,15 +278,13 @@
 					<li>New Weapon Set</li>
 				</ul>
 			</div>
-		</div>-->
-		<hr width="80%">
-		<div id="timeline"></div>
-	</div>
+		</div>
+	</div>-->
 	
 	<div class="row" id="fractals">
 		<div class="content">
 			<h2>Time since last Fractal</h2>
-			<h4>Kinfall</h4>
+			<h4>Kinfall (CM)</h4>
 			<div class="Timer"></div>
 		</div>
 	</div>
@@ -385,16 +383,16 @@
 	var timers = document.getElementsByClassName("Timer");
 	for (var i = 0; i < timers.length; i++) {
 		switch ((timers[i].parentElement).parentElement.id) {
-			case "expansion": startCD(timers[i], new Date("jul 08, 2025 10:00:00").getTime()); break;
+			case "expansion": startCD(timers[i], new Date("jul 08, 2025 18:00:00").getTime()); break;
 			case "gw3": startCD(timers[i], new Date("mar 28, 2024 10:00:00").getTime()); break;
-			case "fractals": startCD(timers[i], new Date("jun 03, 2025 18:00:00").getTime()); break;
+			case "fractals": startCD(timers[i], new Date("jun 24, 2025 18:00:00").getTime()); break;
 			case "raids": startCD(timers[i], new Date("mar 11, 2025 18:00:00").getTime()); break;
 			case "balance-patch": startCD(timers[i], new Date("jun 24, 2025 18:00:00").getTime()); break;
 			case "strikes": startCD(timers[i], new Date("feb 27, 2024 18:00:00").getTime()); break;
 			case "alliances": startCD(timers[i], new Date("feb 1, 2018 18:00:00").getTime()); break;
 			case "dungeons": startCD(timers[i], new Date("jun 25, 2013 18:00:00").getTime()); break;
 			case "drms": startCD(timers[i], new Date("mar 9, 2021 18:00:00").getTime()); break;
-			//case "mysticbuilds": 			startCD(timers[i], new Date("jan 29, 2022 18:00:00").getTime()); break;
+			//case "mysticbuilds": startCD(timers[i], new Date("jan 29, 2022 18:00:00").getTime()); break;
 			case "pvp-tournament": startCD(timers[i], new Date("jul 29, 2022 18:00:00").getTime()); break;
 			case "raid-tournament": startCD(timers[i], new Date("apr 29, 2023 18:00:00").getTime()); break;
 			case "doppelganger": startCD(timers[i], new Date("may 11, 2021 18:00:00").getTime()); break;
@@ -457,8 +455,6 @@
 	var newOrder = [];
 
 	window.onload = (event) => {
-		renderTimeline();
-
 		setTimeout(() => {
 			var body = Array.from(document.body.children);
 			body.forEach(element => {
