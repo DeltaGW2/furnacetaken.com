@@ -452,6 +452,7 @@
 			});
 		}, 1000);
 	};
+
 	function renderTimeline() {
 		var options = {
 			series: [
@@ -1481,7 +1482,7 @@
 				foreColor: "#FFFFFF",
 				background: "#44444488",
 				dropShadow: {
-					enabled: true,
+					enabled: false,
 					enabledOnSeries: undefined,
 					top: 0,
 					left: 0,
@@ -1489,9 +1490,7 @@
 					color: '#000',
 					opacity: 0.35
 				},
-				animations: {
-					enabled: false
-				}
+				zoom: { enabled: false }
 			},
 			plotOptions: {
 				bar: {
