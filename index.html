@@ -128,6 +128,10 @@
 	#gw3 {
 		background-image: url("img/gw3.jpg");
 	}
+
+	#gw3-confirmed {
+		background-image: url("img/gw3.jpg");
+	}
 	
 	#expansion {
 		background-image: url("img/expansion.jpg");
@@ -305,6 +309,12 @@
 			<h2>oopsie</h2>
 			<div class="Timer"></div>
 		</div>
+	</div><div class="row" id="gw3-confirmed">
+		<div class="content">
+			<h2>oopsie</h2>
+			<h4>again</h4>
+			<div class="Timer"></div>
+		</div>
 	</div>
 	<!--<div class="row" id="drms">
 		<div class="content">
@@ -354,6 +364,7 @@
 		switch ((timers[i].parentElement).parentElement.id) {
 			case "expansion": startCD(timers[i], new Date("oct 28, 2025 17:00:00").getTime()); break;
 			case "gw3": startCD(timers[i], new Date("mar 28, 2024 10:00:00").getTime()); break;
+			case "gw3-confirmed": startCD(timers[i], new Date("jan 14, 2026 10:00:00").getTime()); break;
 			case "fractals": startCD(timers[i], new Date("jun 24, 2025 17:00:00").getTime()); break;
 			case "raids": startCD(timers[i], new Date("mar 11, 2025 17:00:00").getTime()); break;
 			case "balance-patch": startCD(timers[i], new Date("jun 24, 2025 17:00:00").getTime()); break;
@@ -367,7 +378,7 @@
 			case "doppelganger": startCD(timers[i], new Date("may 11, 2021 17:00:00").getTime()); break;
 			case "fractal-leaderboards": startCD(timers[i], new Date("jul 30, 2015 17:00:00").getTime()); break;
 			case "fish": startCD(timers[i], new Date("aug 20, 2024 17:00:00").getTime()); break;
-			case "q1-countdown": startCD(timers[i], new Date("jan 27, 2026 17:00:00").getTime()); break;
+			case "q1-countdown": startCD(timers[i], new Date("feb 03, 2026 17:00:00").getTime()); break;
 			case "q2-countdown": startCD(timers[i], new Date("apr 28, 2026 17:00:00").getTime()); break;
 			case "q3-countdown": startCD(timers[i], new Date("jul 28, 2026 17:00:00").getTime()); break;
 		}
